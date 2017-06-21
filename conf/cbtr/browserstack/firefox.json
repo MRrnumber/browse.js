@@ -1,13 +1,8 @@
 {
+  "test_file": "tests/html/jasmine/tests.html",
   "browsers": {
     "BrowserStack": {
       "JS": [
-        {
-          "os": "Windows",
-          "osVersion": "7",
-          "browser": "Firefox",
-          "browserVersion": "3.0"
-        },
         {
           "os": "Windows",
           "osVersion": "7",
@@ -91,12 +86,6 @@
           "osVersion": "10",
           "browser": "Firefox",
           "browserVersion": "52.0"
-        },
-        {
-          "os": "Windows",
-          "osVersion": "XP",
-          "browser": "Firefox",
-          "browserVersion": "3.0"
         },
         {
           "os": "Windows",
@@ -393,6 +382,16 @@
           "browserVersion": "54.0"
         }
       ]
+    }
+  },
+  "framework": "jasmine",
+  "capabilities": {
+    "BrowserStack": {
+      "JS": {
+        "local": true,
+        "screenshots": true,
+        "timeout": 120
+      }
     }
   },
   "server": {

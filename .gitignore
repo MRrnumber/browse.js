@@ -42,5 +42,5 @@ BrowserStackLocal*
 # Swap files
 .*swp
 
-# JSDoc output
-out/
+# Instrumented code
+browse.inst.js

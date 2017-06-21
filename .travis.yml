@@ -10,26 +10,27 @@ branches:
 env:
   - BROWSERS_SET=chrome
   - BROWSERS_SET=firefox
-  - BROWSERS_SET=opera
   - BROWSERS_SET=ie
   - BROWSERS_SET=android
   - BROWSERS_SET=ios
   - BROWSERS_SET=safari
-  - BROWSERS_SET=ie-mobile
   - BROWSERS_SET=edge
   - BROWSERS_SET=opera-mobile
   - BROWSERS_SET=yandex
+
+#  - BROWSERS_SET=opera
 
 before_install:
   - export CC=gcc-6
   - export CXX=g++-6
 
 before_script:
-  - LOG_LEVEL=INFO node ./node_modules/cross-browser-tests-runner/server.js &
+  - npm run instrument
 
-cache:
-  directories:
-    - node_modules
+after_script:
+  - npm run coverage-report
+  - npm run codecov-upload
+  - npm run coveralls-upload
 
 addons:
   apt:

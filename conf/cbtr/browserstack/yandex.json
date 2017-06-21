@@ -1,4 +1,5 @@
 {
+  "test_file": "tests/html/jasmine/tests.html",
   "browsers": {
     "BrowserStack": {
       "JS": [
@@ -63,6 +64,16 @@
           "browserVersion": "14.12"
         }
       ]
+    }
+  },
+  "framework": "jasmine",
+  "capabilities": {
+    "BrowserStack": {
+      "JS": {
+        "local": true,
+        "screenshots": true,
+        "timeout": 120
+      }
     }
   },
   "server": {

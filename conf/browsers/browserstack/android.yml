@@ -16,7 +16,6 @@ BrowserStack:
           - Samsung Galaxy S2
       "4.0":
         Android Browser:
-          - "Amazon Kindle Fire HD 8.9"
           - Google Nexus
           - HTC One X
           - Motorola Razr
@@ -40,9 +39,3 @@ BrowserStack:
           - "HTC One M8"
           - "Samsung Galaxy S5 Mini"
           - "Samsung Galaxy S5"
-          - "Samsung Galaxy Tab 4 10.1"
-      "5.0":
-        Android Browser:
-          - "Google Nexus 5"
-          - "Google Nexus 6"
-          - "Google Nexus 9"

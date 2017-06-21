@@ -1,4 +1,5 @@
 {
+  "test_file": "tests/html/jasmine/tests.html",
   "browsers": {
     "BrowserStack": {
       "JS": [
@@ -185,6 +186,16 @@
           "device": "iPhone SE"
         }
       ]
+    }
+  },
+  "framework": "jasmine",
+  "capabilities": {
+    "BrowserStack": {
+      "JS": {
+        "local": true,
+        "screenshots": true,
+        "timeout": 120
+      }
     }
   },
   "server": {

@@ -1,4 +1,5 @@
 {
+  "test_file": "tests/html/jasmine/tests.html",
   "browsers": {
     "BrowserStack": {
       "JS": [
@@ -31,6 +32,16 @@
           "device": "Nokia Lumia 520"
         }
       ]
+    }
+  },
+  "framework": "jasmine",
+  "capabilities": {
+    "BrowserStack": {
+      "JS": {
+        "local": true,
+        "screenshots": true,
+        "timeout": 120
+      }
     }
   },
   "server": {

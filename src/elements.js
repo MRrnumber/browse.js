@@ -205,8 +205,10 @@ function safeInsertAdjacentHtml(element, spec, html) {
     return true
   }
   catch(e) {
-    console.log(e.message)
-    console.log('insertAdjacentHTML failed: ' + element.tagName + ' ' + html)
+    if(window.console && window.console.log) {
+      console.log(e.message)
+      console.log('insertAdjacentHTML failed: ' + element.tagName + ' ' + html)
+    }
     return !(!e.message.match(__ie_invalid_target__))
   }
 }
@@ -223,8 +225,10 @@ function safeSetInnerHTML(element, html) {
     element.innerHTML = html
   }
   catch(e) {
-    console.log(e.message)
-    console.log('setting innerHTML failed: ' + element.tagName + ' ' + html)
+    if(window.console && window.console.log) {
+      console.log(e.message)
+      console.log('setting innerHTML failed: ' + element.tagName + ' ' + html)
+    }
   }
 }
 

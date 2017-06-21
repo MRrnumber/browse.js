@@ -1,4 +1,5 @@
 {
+  "test_file": "tests/html/jasmine/tests.html",
   "browsers": {
     "BrowserStack": {
       "JS": [
@@ -50,13 +51,6 @@
           "browser": "Android Browser",
           "browserVersion": null,
           "device": "Samsung Galaxy S2"
-        },
-        {
-          "os": "Android",
-          "osVersion": "4.0",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Amazon Kindle Fire HD 8.9"
         },
         {
           "os": "Android",
@@ -169,36 +163,18 @@
           "browser": "Android Browser",
           "browserVersion": null,
           "device": "Samsung Galaxy S5"
-        },
-        {
-          "os": "Android",
-          "osVersion": "4.4",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Samsung Galaxy Tab 4 10.1"
-        },
-        {
-          "os": "Android",
-          "osVersion": "5.0",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Google Nexus 5"
-        },
-        {
-          "os": "Android",
-          "osVersion": "5.0",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Google Nexus 6"
-        },
-        {
-          "os": "Android",
-          "osVersion": "5.0",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Google Nexus 9"
         }
       ]
+    }
+  },
+  "framework": "jasmine",
+  "capabilities": {
+    "BrowserStack": {
+      "JS": {
+        "local": true,
+        "screenshots": true,
+        "timeout": 120
+      }
     }
   },
   "server": {
