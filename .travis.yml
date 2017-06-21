@@ -1,20 +1,32 @@
-language: javascript
+language: node_js
 
-node:
-  - 6.10.2
-
-install:
-  - npm install browserstack-runner request && cp ./tests/cross-browser/browserstack/browserstack-runner/changed-copies/lib/config.js node_modules/browserstack-runner/lib/
-
-env:
-  - BROWSERSTACK_BUILD=`./tests/scripts/get-build-no.sh`
-
-script:
-  - ./tests/cross-browser/browserstack/browserstack-runner/run.js ./tests/cross-browser/browserstack/browserstack-runner/conf/browserstack-travis.json
+node_js:
+  - "7"
 
 branches:
   only:
   - master
+
+matrix:
+  include:
+    - os: linux
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++-6
+
+before_install:
+  - export CC=gcc-6
+  - export CXX=g++-6
+
+before_script:
+  - node ./node_modules/cross-browser-tests-runner/server.js &
+
+cache:
+  directories:
+    - node_modules
 
 addons:
   browserstack:
