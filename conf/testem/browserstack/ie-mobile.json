@@ -1,0 +1,91 @@
+{
+  "parallel": 2,
+  "framework": "jasmine",
+  "browser_start_timeout": 300,
+  "src_files": [
+    "lib/browse.js",
+    "tests/js/jasmine/*.js"
+  ],
+  "on_start": {
+    "command": "node ./node_modules/.bin/cbtr-testem-browserstack-open --local",
+    "wait_for_text": "opened testem/browserstack",
+    "wait_for_text_timeout": 60000
+  },
+  "on_exit": "node ./node_modules/.bin/cbtr-testem-browserstack-close",
+  "launchers": {
+    "Windows_Mobile_8_1_IE_Mobile_Nokia_Lumia_930": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "winphone",
+        "--osVersion",
+        "8.1",
+        "--browser",
+        "IE Mobile",
+        "--timeout",
+        120,
+        "--screenshots"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_Mobile_8_1_IE_Mobile_Nokia_Lumia_925": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "winphone",
+        "--osVersion",
+        "8.1",
+        "--browser",
+        "IE Mobile",
+        "--timeout",
+        120,
+        "--screenshots"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_Mobile_8_1_IE_Mobile_Nokia_Lumia_630": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "winphone",
+        "--osVersion",
+        "8.1",
+        "--browser",
+        "IE Mobile",
+        "--timeout",
+        120,
+        "--screenshots"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_Mobile_8_1_IE_Mobile_Nokia_Lumia_520": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "winphone",
+        "--osVersion",
+        "8.1",
+        "--browser",
+        "IE Mobile",
+        "--timeout",
+        120,
+        "--screenshots"
+      ],
+      "protocol": "browser"
+    }
+  },
+  "launch_in_ci": [
+    "Windows_Mobile_8_1_IE_Mobile_Nokia_Lumia_930",
+    "Windows_Mobile_8_1_IE_Mobile_Nokia_Lumia_925",
+    "Windows_Mobile_8_1_IE_Mobile_Nokia_Lumia_630",
+    "Windows_Mobile_8_1_IE_Mobile_Nokia_Lumia_520"
+  ]
+}

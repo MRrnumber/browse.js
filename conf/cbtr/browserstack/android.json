@@ -1,0 +1,208 @@
+{
+  "browsers": {
+    "BrowserStack": {
+      "JS": [
+        {
+          "os": "Android",
+          "osVersion": "1.5",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "HTC Hero"
+        },
+        {
+          "os": "Android",
+          "osVersion": "1.6",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Sony Xperia X10"
+        },
+        {
+          "os": "Android",
+          "osVersion": "2.2",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "HTC Wildfire"
+        },
+        {
+          "os": "Android",
+          "osVersion": "2.2",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy S"
+        },
+        {
+          "os": "Android",
+          "osVersion": "2.3",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Motorola Droid Razr"
+        },
+        {
+          "os": "Android",
+          "osVersion": "2.3",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy Note"
+        },
+        {
+          "os": "Android",
+          "osVersion": "2.3",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy S2"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Amazon Kindle Fire HD 8.9"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Google Nexus"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "HTC One X"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Motorola Razr"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy Note 10.1"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy Tab 2 10.1"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Sony Xperia Tipo"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.1",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Google Nexus 7"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.1",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy Note 2"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.1",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy S3"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.2",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Google Nexus 4"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.3",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Amazon Kindle Fire HDX 7"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.3",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy Note 3"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.3",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy S4"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.4",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "HTC One M8"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.4",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy S5 Mini"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.4",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy S5"
+        },
+        {
+          "os": "Android",
+          "osVersion": "4.4",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Samsung Galaxy Tab 4 10.1"
+        },
+        {
+          "os": "Android",
+          "osVersion": "5.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Google Nexus 5"
+        },
+        {
+          "os": "Android",
+          "osVersion": "5.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Google Nexus 6"
+        },
+        {
+          "os": "Android",
+          "osVersion": "5.0",
+          "browser": "Android Browser",
+          "browserVersion": null,
+          "device": "Google Nexus 9"
+        }
+      ]
+    }
+  },
+  "server": {
+    "port": 7982,
+    "host": "127.0.0.1"
+  }
+}

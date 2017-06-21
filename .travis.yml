@@ -7,29 +7,33 @@ branches:
   only:
   - master
 
-matrix:
-  include:
-    - os: linux
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-6
+env:
+  - BROWSERS_SET=chrome
+  - BROWSERS_SET=firefox
+  - BROWSERS_SET=opera
+  - BROWSERS_SET=ie
+  - BROWSERS_SET=android
+  - BROWSERS_SET=ios
+  - BROWSERS_SET=safari
+  - BROWSERS_SET=ie-mobile
+  - BROWSERS_SET=edge
+  - BROWSERS_SET=opera-mobile
+  - BROWSERS_SET=yandex
 
 before_install:
   - export CC=gcc-6
   - export CXX=g++-6
 
 before_script:
-  - node ./node_modules/cross-browser-tests-runner/server.js &
+  - LOG_LEVEL=INFO node ./node_modules/cross-browser-tests-runner/server.js &
 
 cache:
   directories:
     - node_modules
 
 addons:
-  browserstack:
-    username: reeteshranjan1
-    access_key:
-      secure: d1aMCXejEfO9E/ZP2RZsrxUkXMJqzt+dgqPrdmlt1seKrx07SuvdtrTsUYuj2EKsEFSQt7tbb1+e5gIKLH/D59EtYBGgVUi7ngrNEZuZtRAvgyT3mTIMyjFWh8UYwkr5Bz9aGpIPrdhnHM2qfxlmmx6uiYxv6SHNVtfZqHbwgs0Ixr+AHS4zjWQoRY/uHPexzmYD9/NUos8jIn5+rNSsW2mDFtqFdgoqbLXC0YLg/38glLdJLZS8Bx9veaGp8v++hRa7DnF0n4REVIE0MuS2/BHqXN/NXNvgOT5cuQ4oON+iHfOa3S80AOaBjv+slaU+gCSsbHK5FJbMX/kzzoTlRmKMO9fjrw+iMgowJUDmX0ii8KdzooorH7tcF+7QOKwlFPqBgiB+M8KqBBzZwqbbwzafqBksh+8tY/nTzbag5OiUEKr0QzZWc3AuTO3VCCm88jMcsGVf+GrQmlIGwxTteZx3Ss9RhAHWWLACrENn9JufwtJrw2ESYyUuhbj5bRbOI0BOfLUbx/pnYnVedbOx/sPOJZpNjU1/RX0oplDCJNh30RSMFyAit9io1hG0Ko7Q+EukfoUwtOtItf13pAX1QZ+EBUxZARYRPEmiu0bF7t7GneHsDxFmDVRj8NKTKOEldM1dhhNGhRNIa3H8o8qJWVNkn7rqFLlmKNYvNYsGDoI=
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-6

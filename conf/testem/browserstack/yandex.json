@@ -1,0 +1,229 @@
+{
+  "parallel": 2,
+  "framework": "jasmine",
+  "browser_start_timeout": 300,
+  "src_files": [
+    "lib/browse.js",
+    "tests/js/jasmine/*.js"
+  ],
+  "on_start": {
+    "command": "node ./node_modules/.bin/cbtr-testem-browserstack-open --local",
+    "wait_for_text": "opened testem/browserstack",
+    "wait_for_text_timeout": 60000
+  },
+  "on_exit": "node ./node_modules/.bin/cbtr-testem-browserstack-close",
+  "launchers": {
+    "Windows_7_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "7",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_8_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "8",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_10_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "10",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_XP_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "XP",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_8_1_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "8.1",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Mountain_Lion_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Mountain Lion",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Mavericks_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Mavericks",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Yosemite_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Yosemite",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_El_Capitan_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "El Capitan",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Sierra_Yandex_14_12": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Sierra",
+        "--browser",
+        "yandex",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "14.12",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    }
+  },
+  "launch_in_ci": [
+    "Windows_7_Yandex_14_12",
+    "Windows_8_Yandex_14_12",
+    "Windows_10_Yandex_14_12",
+    "Windows_XP_Yandex_14_12",
+    "Windows_8_1_Yandex_14_12",
+    "Mac_OSX_Mountain_Lion_Yandex_14_12",
+    "Mac_OSX_Mavericks_Yandex_14_12",
+    "Mac_OSX_Yosemite_Yandex_14_12",
+    "Mac_OSX_El_Capitan_Yandex_14_12",
+    "Mac_OSX_Sierra_Yandex_14_12"
+  ]
+}

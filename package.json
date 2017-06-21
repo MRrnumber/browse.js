@@ -19,7 +19,7 @@
     "build": "node ./scripts/build.js",
     "minify": "./node_modules/.bin/uglifyjs --mangle=toplevel,eval --compress properties,dead_code,drop_debugger,conditionals,comparisons,evaluate,booleans,loops,unused,hoist_funs,if_return,join_vars,cascade,warnings,negate_iife,drop_console lib/browse.js > lib/browse.min.js",
     "lint": "./node_modules/.bin/eslint ./lib/browse.js",
-    "test": "./node_modules/.bin/testem ci -f ./conf/testem/browserstack/travis.json"
+    "test": "./node_modules/.bin/testem ci -f ./conf/testem/browserstack/$BROWSERS_SET.json"
   },
   "repository": {
     "type": "git",

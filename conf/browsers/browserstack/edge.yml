@@ -1,0 +1,5 @@
+BrowserStack:
+  JS:
+    Windows:
+      "10":
+        Edge: 14.0-15.0

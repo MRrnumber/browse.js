@@ -1,0 +1,418 @@
+{
+  "parallel": 2,
+  "framework": "jasmine",
+  "browser_start_timeout": 300,
+  "src_files": [
+    "lib/browse.js",
+    "tests/js/jasmine/*.js"
+  ],
+  "on_start": {
+    "command": "node ./node_modules/.bin/cbtr-testem-browserstack-open --local",
+    "wait_for_text": "opened testem/browserstack",
+    "wait_for_text_timeout": 60000
+  },
+  "on_exit": "node ./node_modules/.bin/cbtr-testem-browserstack-close",
+  "launchers": {
+    "Windows_7_Safari_4_0": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "7",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "4.0",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_7_Safari_5_0": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "7",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.0",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_7_Safari_5_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "7",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_8_Safari_5_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "8",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_10_Safari_5_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "10",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_XP_Safari_4_0": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "XP",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "4.0",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_XP_Safari_5_0": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "XP",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.0",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_XP_Safari_5_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "XP",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Windows_8_1_Safari_5_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "Windows",
+        "--osVersion",
+        "8.1",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Snow_Leopard_Safari_4_0": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Snow Leopard",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "4.0",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Snow_Leopard_Safari_5_0": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Snow Leopard",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.0",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Snow_Leopard_Safari_5_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Snow Leopard",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Lion_Safari_5_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Lion",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "5.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Lion_Safari_6_0": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Lion",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "6.0",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Mountain_Lion_Safari_6_2": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Mountain Lion",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "6.2",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Mavericks_Safari_7_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Mavericks",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "7.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Yosemite_Safari_8_0": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Yosemite",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "8.0",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_El_Capitan_Safari_9_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "El Capitan",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "9.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    },
+    "Mac_OSX_Sierra_Safari_10_1": {
+      "exe": "node",
+      "args": [
+        "./node_modules/.bin/cbtr-testem-browserstack-browser",
+        "--local",
+        "--os",
+        "OS X",
+        "--osVersion",
+        "Sierra",
+        "--browser",
+        "safari",
+        "--timeout",
+        120,
+        "--browserVersion",
+        "10.1",
+        "--screenshots",
+        "--video"
+      ],
+      "protocol": "browser"
+    }
+  },
+  "launch_in_ci": [
+    "Windows_7_Safari_4_0",
+    "Windows_7_Safari_5_0",
+    "Windows_7_Safari_5_1",
+    "Windows_8_Safari_5_1",
+    "Windows_10_Safari_5_1",
+    "Windows_XP_Safari_4_0",
+    "Windows_XP_Safari_5_0",
+    "Windows_XP_Safari_5_1",
+    "Windows_8_1_Safari_5_1",
+    "Mac_OSX_Snow_Leopard_Safari_4_0",
+    "Mac_OSX_Snow_Leopard_Safari_5_0",
+    "Mac_OSX_Snow_Leopard_Safari_5_1",
+    "Mac_OSX_Lion_Safari_5_1",
+    "Mac_OSX_Lion_Safari_6_0",
+    "Mac_OSX_Mountain_Lion_Safari_6_2",
+    "Mac_OSX_Mavericks_Safari_7_1",
+    "Mac_OSX_Yosemite_Safari_8_0",
+    "Mac_OSX_El_Capitan_Safari_9_1",
+    "Mac_OSX_Sierra_Safari_10_1"
+  ]
+}

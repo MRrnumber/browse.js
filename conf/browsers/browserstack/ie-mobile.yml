@@ -1,0 +1,9 @@
+BrowserStack:
+  JS:
+    Windows Mobile:
+      "8.1":
+        IE Mobile:
+          - "Nokia Lumia 930"
+          - "Nokia Lumia 925"
+          - "Nokia Lumia 630"
+          - "Nokia Lumia 520"
