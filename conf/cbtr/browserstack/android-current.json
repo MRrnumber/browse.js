@@ -121,48 +121,6 @@
           "browser": "Android Browser",
           "browserVersion": null,
           "device": "Google Nexus 4"
-        },
-        {
-          "os": "Android",
-          "osVersion": "4.3",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Amazon Kindle Fire HDX 7"
-        },
-        {
-          "os": "Android",
-          "osVersion": "4.3",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Samsung Galaxy Note 3"
-        },
-        {
-          "os": "Android",
-          "osVersion": "4.3",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Samsung Galaxy S4"
-        },
-        {
-          "os": "Android",
-          "osVersion": "4.4",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "HTC One M8"
-        },
-        {
-          "os": "Android",
-          "osVersion": "4.4",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Samsung Galaxy S5 Mini"
-        },
-        {
-          "os": "Android",
-          "osVersion": "4.4",
-          "browser": "Android Browser",
-          "browserVersion": null,
-          "device": "Samsung Galaxy S5"
         }
       ]
     }

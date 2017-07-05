@@ -35,10 +35,12 @@
     }
   },
   "framework": "jasmine",
+  "retries": 1,
   "capabilities": {
     "BrowserStack": {
       "JS": {
         "local": true,
+        "localIdentifier": "browse-js-tunnel-ie-mobile",
         "screenshots": true,
         "timeout": 120
       }

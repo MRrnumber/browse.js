@@ -385,10 +385,12 @@
     }
   },
   "framework": "jasmine",
+  "retries": 1,
   "capabilities": {
     "BrowserStack": {
       "JS": {
         "local": true,
+        "localIdentifier": "browse-js-tunnel-firefox",
         "screenshots": true,
         "timeout": 120
       }

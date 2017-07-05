@@ -1,8 +1,6 @@
 BrowserStack:
   JS:
     Windows:
-      XP:
-        Yandex: 14.12
       "7":
         Yandex: 14.12
       "8":

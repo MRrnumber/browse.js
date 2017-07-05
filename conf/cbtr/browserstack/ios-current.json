@@ -93,97 +93,6 @@
           "browser": "Mobile Safari",
           "browserVersion": null,
           "device": "iPhone 5S"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "8.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPad Air"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "8.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPad Mini 2"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "8.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPhone 6 Plus"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "8.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPhone 6"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "9.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPad Air 2"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "9.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPad Mini 4"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "9.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPad Pro"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "9.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPhone 6S Plus"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "9.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPhone 6S"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "10.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPad Pro (9.7 inch)"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "10.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPhone 7 Plus"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "10.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPhone 7"
-        },
-        {
-          "os": "iOS",
-          "osVersion": "10.3",
-          "browser": "Mobile Safari",
-          "browserVersion": null,
-          "device": "iPhone SE"
         }
       ]
     }
@@ -194,7 +103,7 @@
     "BrowserStack": {
       "JS": {
         "local": true,
-        "localIdentifier": "browse-js-tunnel-mobile-safari",
+        "localIdentifier": "browse-js-tunnel-ios",
         "screenshots": true,
         "timeout": 120
       }

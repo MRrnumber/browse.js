@@ -8,17 +8,16 @@ branches:
   - master
 
 env:
-  - BROWSERS_SET=chrome
-  - BROWSERS_SET=firefox
   - BROWSERS_SET=ie
-  - BROWSERS_SET=android
-  - BROWSERS_SET=ios
-  - BROWSERS_SET=safari
   - BROWSERS_SET=edge
+  - BROWSERS_SET=safari-current
   - BROWSERS_SET=opera-mobile
   - BROWSERS_SET=yandex
-
-#  - BROWSERS_SET=opera
+  - BROWSERS_SET=android-current
+  - BROWSERS_SET=ios-current
+  - BROWSERS_SET=chrome
+  - BROWSERS_SET=firefox
+  - BROWSERS_SET=opera
 
 before_install:
   - export CC=gcc-6

@@ -3,11 +3,11 @@ BrowserStack:
     Windows:
       XP:
         Chrome:
-          - 15.0-16.0
+          - 15.0-17.0
           - 39.0-40.0
       "7":
         Chrome:
-          - 17.0-18.0
+          - "18.0"
           - 41.0-42.0
       "8":
         Chrome:

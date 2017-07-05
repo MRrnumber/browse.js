@@ -98,24 +98,6 @@
           "osVersion": "Mavericks",
           "browser": "Safari",
           "browserVersion": "7.1"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Yosemite",
-          "browser": "Safari",
-          "browserVersion": "8.0"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "El Capitan",
-          "browser": "Safari",
-          "browserVersion": "9.1"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Sierra",
-          "browser": "Safari",
-          "browserVersion": "10.1"
         }
       ]
     }

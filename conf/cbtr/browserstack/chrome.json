@@ -7,12 +7,6 @@
           "os": "Windows",
           "osVersion": "7",
           "browser": "Chrome",
-          "browserVersion": "17.0"
-        },
-        {
-          "os": "Windows",
-          "osVersion": "7",
-          "browser": "Chrome",
           "browserVersion": "18.0"
         },
         {
@@ -74,6 +68,12 @@
           "osVersion": "XP",
           "browser": "Chrome",
           "browserVersion": "16.0"
+        },
+        {
+          "os": "Windows",
+          "osVersion": "XP",
+          "browser": "Chrome",
+          "browserVersion": "17.0"
         },
         {
           "os": "Windows",
@@ -277,10 +277,12 @@
     }
   },
   "framework": "jasmine",
+  "retries": 1,
   "capabilities": {
     "BrowserStack": {
       "JS": {
         "local": true,
+        "localIdentifier": "browse-js-tunnel-chrome",
         "screenshots": true,
         "timeout": 120
       }

@@ -109,12 +109,6 @@
           "os": "Windows",
           "osVersion": "XP",
           "browser": "Opera",
-          "browserVersion": "17.0"
-        },
-        {
-          "os": "Windows",
-          "osVersion": "XP",
-          "browser": "Opera",
           "browserVersion": "18.0"
         },
         {
@@ -122,6 +116,12 @@
           "osVersion": "8.1",
           "browser": "Opera",
           "browserVersion": "12.14"
+        },
+        {
+          "os": "Windows",
+          "osVersion": "8.1",
+          "browser": "Opera",
+          "browserVersion": "15.0"
         },
         {
           "os": "Windows",
@@ -139,31 +139,13 @@
           "os": "Mac OSX",
           "osVersion": "Snow Leopard",
           "browser": "Opera",
-          "browserVersion": "11.1"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Snow Leopard",
-          "browser": "Opera",
-          "browserVersion": "11.6"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Snow Leopard",
-          "browser": "Opera",
-          "browserVersion": "12.15"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Snow Leopard",
-          "browser": "Opera",
-          "browserVersion": "15.0"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Snow Leopard",
-          "browser": "Opera",
           "browserVersion": "16.0"
+        },
+        {
+          "os": "Mac OSX",
+          "osVersion": "Snow Leopard",
+          "browser": "Opera",
+          "browserVersion": "17.0"
         },
         {
           "os": "Mac OSX",
@@ -176,18 +158,6 @@
           "osVersion": "Snow Leopard",
           "browser": "Opera",
           "browserVersion": "22.0"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Lion",
-          "browser": "Opera",
-          "browserVersion": "11.1"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Lion",
-          "browser": "Opera",
-          "browserVersion": "12.0"
         },
         {
           "os": "Mac OSX",
@@ -217,18 +187,6 @@
           "os": "Mac OSX",
           "osVersion": "Mountain Lion",
           "browser": "Opera",
-          "browserVersion": "11.1"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Mountain Lion",
-          "browser": "Opera",
-          "browserVersion": "12.12"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Mountain Lion",
-          "browser": "Opera",
           "browserVersion": "25.0"
         },
         {
@@ -248,18 +206,6 @@
           "osVersion": "Mountain Lion",
           "browser": "Opera",
           "browserVersion": "36.0"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Mavericks",
-          "browser": "Opera",
-          "browserVersion": "11.1"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Mavericks",
-          "browser": "Opera",
-          "browserVersion": "12.14"
         },
         {
           "os": "Mac OSX",
@@ -295,12 +241,6 @@
           "os": "Mac OSX",
           "osVersion": "El Capitan",
           "browser": "Opera",
-          "browserVersion": "12.14"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "El Capitan",
-          "browser": "Opera",
           "browserVersion": "41.0"
         },
         {
@@ -308,12 +248,6 @@
           "osVersion": "El Capitan",
           "browser": "Opera",
           "browserVersion": "42.0"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Sierra",
-          "browser": "Opera",
-          "browserVersion": "12.15"
         },
         {
           "os": "Mac OSX",
@@ -337,10 +271,12 @@
     }
   },
   "framework": "jasmine",
+  "retries": 1,
   "capabilities": {
     "BrowserStack": {
       "JS": {
         "local": true,
+        "localIdentifier": "browse-js-tunnel-opera",
         "screenshots": true,
         "timeout": 120
       }
