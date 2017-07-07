@@ -13,12 +13,10 @@ browse.prototype.style = function(property) {
   else if(document.defaultView && document.defaultView.getComputedStyle) {
     return document.defaultView.getComputedStyle(this.element, null).getPropertyValue(property)
   }
-  else {
-    return null
-  }
+  return null
 }
 
-browse.prototype.opacity = function(value) {
+/*browse.prototype.opacity = function(value) {
   var element = this.element
   if(undefined === value) {
     if(undefined !== element.style.opacity) {
@@ -53,4 +51,4 @@ browse.prototype.display = function(value) {
   }
   element.style.display = value
   return this
-}
+}*/

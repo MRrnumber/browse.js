@@ -13,13 +13,30 @@ describe('previous', function() {
 
   /** Should return a valid element in case there is a sibling */
   it('should return valid previous element sibling', function() {
-    var previous = $_(document.body).lastChild().previous()
+    var pivot = $_(document.body).lastChild()
+    var previous = pivot.previous()
     expect(previous).toBeDefined()
     expect(previous).not.toBeNull()
-    var expectedPrevious = $_(document.body).lastChild().element.previousSibling
+    var expectedPrevious = pivot.element.previousSibling
     while (expectedPrevious && Node.ELEMENT_NODE !== expectedPrevious.nodeType) {
       expectedPrevious = expectedPrevious.previousSibling
     }
     expect(previous.element).toEqual(expectedPrevious)
+  })
+
+  /** Should return a valid element in case there is a sibling */
+  it('should return valid previous element sibling with a non-HTMLElement node in between', function() {
+    var pivot = $_(document.body).lastChild()
+    var dummy = document.createTextNode("abcdef123")
+    document.body.insertBefore(dummy, pivot.element)
+    var previous = pivot.previous()
+    expect(previous).toBeDefined()
+    expect(previous).not.toBeNull()
+    var expectedPrevious = pivot.element.previousSibling
+    while (expectedPrevious && Node.ELEMENT_NODE !== expectedPrevious.nodeType) {
+      expectedPrevious = expectedPrevious.previousSibling
+    }
+    expect(previous.element).toEqual(expectedPrevious)
+    dummy.parentNode.removeChild(dummy)
   })
 })

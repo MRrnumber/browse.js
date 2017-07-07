@@ -11,8 +11,8 @@ function detectIEWindowOffset() {
   var marginTop = parseInt($_(document.body).style('margin-top'), 10)
   if(!marginLeft) marginLeft = 0
   if(!marginTop) marginTop = 0
-  browse.capabilities.adjustOffsetY = ('top' in rect ? rect.top : rect.y) + getCurrY() - marginTop
-  browse.capabilities.adjustOffsetX = ('left' in rect ? rect.left : rect.x) + getCurrX() - marginLeft
+  browse.capabilities.adjustOffsetY = rect.top + getCurrY() - marginTop
+  browse.capabilities.adjustOffsetX = rect.left + getCurrX() - marginLeft
 }
 
 function testAbsolutePositionSupport() {
@@ -24,7 +24,7 @@ function testAbsolutePositionSupport() {
   document.body.appendChild(element)
   var absoluteElement = document.getElementById('test-absolute')
   var rect = absoluteElement.getBoundingClientRect()
-  var left = ('left' in rect ? rect.left : rect.x) - browse.capabilities.adjustOffsetX
+  var left = rect.left - browse.capabilities.adjustOffsetX
   browse.capabilities.absolutePosition = (left === -800)
   element.parentNode.removeChild(element)
   window.scrollTo(sX, sY)
@@ -39,8 +39,7 @@ function testFixedPositionSupport() {
   document.body.appendChild(element)
   var fixedElement = document.getElementById('test-fixed')
   var rect = fixedElement.getBoundingClientRect()
-  var left = ('left' in rect ? rect.left : rect.x) -
-    browse.capabilities.adjustOffsetX
+  var left = rect.left - browse.capabilities.adjustOffsetX
   browse.capabilities.fixedPosition = (left === -800)
   element.parentNode.removeChild(element)
   window.scrollTo(sX, sY)

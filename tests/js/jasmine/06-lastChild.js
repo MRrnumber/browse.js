@@ -21,4 +21,20 @@ describe('lastChild', function() {
     expect(lastChild.element).toEqual(expectedLastChild)
   })
 
+  /** Should return the valid last element child */
+  it('should return a valid element which is last element child followed by a non-HTMLElement node', function() {
+    var dummy = document.createTextNode("abcdef123")
+    document.body.appendChild(dummy)
+    var lastChild = $_(document.body).lastChild()
+    expect(lastChild).not.toBeNull()
+    expect(lastChild.element).toBeDefined()
+    var numChildren = document.body.childNodes.length
+    var expectedLastChild = document.body.childNodes[numChildren - 1]
+    while (expectedLastChild && Node.ELEMENT_NODE !== expectedLastChild.nodeType) {
+      expectedLastChild = expectedLastChild.previousSibling
+    }
+    expect(lastChild.element).toEqual(expectedLastChild)
+    dummy.parentNode.removeChild(dummy)
+  })
+
 })

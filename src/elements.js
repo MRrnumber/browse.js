@@ -154,14 +154,14 @@ browse.prototype.topLeft = function() {
   if(element.getBoundingClientRect) {
     var rect = element.getBoundingClientRect()
     return {
-      top : ('top' in rect ? rect.top : rect.y) + getCurrY() - browse.capabilities.adjustOffsetY,
-      left: ('left' in rect ? rect.left : rect.x) + getCurrX() - browse.capabilities.adjustOffsetX
+      top : rect.top + getCurrY() - browse.capabilities.adjustOffsetY,
+      left: rect.left + getCurrX() - browse.capabilities.adjustOffsetX
     }
   }
-  return { top : 0, left : 0 }
+  throw new Error('No support for getBoundingClientRect')
 }
 
-browse.prototype.height = function() {
+/*browse.prototype.height = function() {
   return this.element.offsetHeight
 }
 
@@ -184,7 +184,7 @@ browse.prototype.remove = function() {
   else {
     this.element.parentNode.removeChild(this.element)
   }
-}
+}*/
 
 function quickAfterBefore(element, html, spec) {
   var tag = element.tagName.toLowerCase()
@@ -205,10 +205,6 @@ function safeInsertAdjacentHtml(element, spec, html) {
     return true
   }
   catch(e) {
-    if(window.console && window.console.log) {
-      console.log(e.message)
-      console.log('insertAdjacentHTML failed: ' + element.tagName + ' ' + html)
-    }
     return !(!e.message.match(__ie_invalid_target__))
   }
 }
@@ -225,10 +221,7 @@ function safeSetInnerHTML(element, html) {
     element.innerHTML = html
   }
   catch(e) {
-    if(window.console && window.console.log) {
-      console.log(e.message)
-      console.log('setting innerHTML failed: ' + element.tagName + ' ' + html)
-    }
+    // do nothing
   }
 }
 

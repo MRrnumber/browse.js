@@ -17,7 +17,7 @@ browse.ready = function(callback) {
     }
     (e.type === 'load' ? window : document)[rem](pre + e.type, init, false)
     if(!done && (done = true)) {
-      callback(e.type || e)
+      callback(e.type) // || e
     }
   },
   poll = function() {
