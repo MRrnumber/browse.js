@@ -1,17 +1,19 @@
-function browse(element)
-{
-  if (!element || !isDOMElement(element)) return null
-  if (element.$_) return element.$_
-  return new create(element)
+function browse(element) {
+  if(!element || !isDOMElement(element)) {
+    return null
+  }
+  if(element.$_) {
+    return element.$_
+  }
+  return new _create(element)
 }
 
-function create(element)
-{
+function _create(element) {
   this.element = element
   this.element.$_ = this
 }
 
-create.prototype = browse.prototype
+_create.prototype = browse.prototype
 
 /*function isDOMNode(obj){
   return (
@@ -23,10 +25,11 @@ create.prototype = browse.prototype
 
 function isDOMElement(obj){
   return (
-    typeof HTMLElement === "object"
-    ? obj instanceof HTMLElement
-    : obj && typeof obj === "object" && obj !== null && obj.nodeType === 1 && typeof obj.nodeName === "string"
+    typeof window.HTMLElement === "object"
+    ? obj instanceof window.HTMLElement
+    : null !== obj && typeof obj === "object" && obj.nodeType === 1 && typeof obj.nodeName === "string"
   )
 }
 
+/** global: ns */
 ns = window.$_ = browse

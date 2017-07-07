@@ -36,6 +36,7 @@ BrowserStack:
           - 21.0-22.0
       "Lion":
         Opera:
+          - 12.12
           - 23.0-24.0
           - 33.0-34.0
       "Mountain Lion":
@@ -47,7 +48,6 @@ BrowserStack:
           - 37.0-38.0
       "Yosemite":
         Opera:
-          - 12.12
           - 39.0-40.0
       "El Capitan":
         Opera:

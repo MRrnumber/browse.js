@@ -23,7 +23,12 @@ ratings:
   - "**.py"
   - "**.rb"
 exclude_paths:
-  - tests/
-  - src/
+  - conf/
   - doc/
+  - lib/
   - scripts/
+  - tests/
+  - src/ajax.js
+  - src/inputs.js
+  - src/events.js
+  - src/animation.js

@@ -1,3 +1,5 @@
+/** global: browse */
+
 browse.capabilities = {
   'adjustOffsetX'   : 0,
   'adjustOffsetY'   : 0,
@@ -9,40 +11,57 @@ function detectIEWindowOffset() {
   var rect = document.body.getBoundingClientRect()
   var marginLeft = parseInt($_(document.body).style('margin-left'), 10)
   var marginTop = parseInt($_(document.body).style('margin-top'), 10)
-  if(!marginLeft) marginLeft = 0
-  if(!marginTop) marginTop = 0
+  if(!marginLeft) {
+    marginLeft = 0
+  }
+  if(!marginTop) {
+    marginTop = 0
+  }
   browse.capabilities.adjustOffsetY = rect.top + getCurrY() - marginTop
   browse.capabilities.adjustOffsetX = rect.left + getCurrX() - marginLeft
 }
 
 function testAbsolutePositionSupport() {
-  var sX = window.scrollX || window.pageXOffset
-  var sY = window.scrollY || window.pageYOffset
-  window.scrollTo(0, 0)
-  var element = document.createElement('div')
-  element.innerHTML = '<div id=test-absolute style=position:absolute;left:-800px></div>'
-  document.body.appendChild(element)
-  var absoluteElement = document.getElementById('test-absolute')
-  var rect = absoluteElement.getBoundingClientRect()
-  var left = rect.left - browse.capabilities.adjustOffsetX
+  var s = rememberAndScrollTo(0, 0)
+  var element = createElementWithContent('<div id=test-absolute style=position:absolute;left:-800px></div>')
+  var left = getLeftOfElement('test-absolute')
   browse.capabilities.absolutePosition = (left === -800)
-  element.parentNode.removeChild(element)
-  window.scrollTo(sX, sY)
+  removeTempAndScrollBack(element, s)
 }
 
 function testFixedPositionSupport() {
-  var sX = window.scrollX || window.pageXOffset
-  var sY = window.scrollY || window.pageYOffset
-  window.scrollTo(100, 100)
-  var element = document.createElement('div')
-  element.innerHTML = '<div id=test-fixed style=position:fixed;left:-800px></div>'
-  document.body.appendChild(element)
-  var fixedElement = document.getElementById('test-fixed')
-  var rect = fixedElement.getBoundingClientRect()
-  var left = rect.left - browse.capabilities.adjustOffsetX
+  var s = rememberAndScrollTo(100, 100)
+  var element = createElementWithContent('<div id=test-fixed style=position:fixed;left:-800px></div>')
+  var left = getLeftOfElement('test-fixed')
   browse.capabilities.fixedPosition = (left === -800)
+  removeTempAndScrollBack(element, s)
+}
+
+function rememberAndScrollTo(x, y) {
+  var s = {
+    sX: window.scrollX || window.pageXOffset,
+    sY: window.scrollY || window.pageYOffset
+  }
+  window.scrollTo(x, y)
+  return s
+}
+
+function createElementWithContent(content) {
+  var element = document.createElement('div')
+  element.innerHTML = content
+  document.body.appendChild(element)
+  return element
+}
+
+function getLeftOfElement(id) {
+  var element = document.getElementById(id)
+  var rect = element.getBoundingClientRect()
+  return (rect.left - browse.capabilities.adjustOffsetX)
+}
+
+function removeTempAndScrollBack(element, s) {
   element.parentNode.removeChild(element)
-  window.scrollTo(sX, sY)
+  window.scrollTo(s.sX, s.sY)
 }
 
 browse.ready(function() {

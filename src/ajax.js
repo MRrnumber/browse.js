@@ -2,7 +2,7 @@ browse.ajax = function(url, options)
 {
     var xhr = getXhr()
 
-    if ('onload' in xhr)
+    if('onload' in xhr)
     {
         xhr.onload = function()
         {
@@ -14,18 +14,18 @@ browse.ajax = function(url, options)
     {
         console.log(xhr, options, 'readyState', xhr.readyState)
 
-        if (__ready_state_done__ === xhr.readyState)
+        if(__ready_state_done__ === xhr.readyState)
         {
-            if (!('onload' in xhr))
+            if(!('onload' in xhr))
             {
                 handleAjaxResponse(xhr, options)
             }
         }
     }
 
-    if (options.timeout)
+    if(options.timeout)
     {
-        if (('ontimeout' in xhr) && ('timeout' in xhr))
+        if(('ontimeout' in xhr) && ('timeout' in xhr))
         {
             xhr.ontimeout = function()
             {
@@ -54,21 +54,21 @@ browse.ajax = function(url, options)
         }
     }
 
-    if (false === options.cache && options.method.match(__methods_without_data__))
+    if(false === options.cache && options.method.match(__methods_without_data__))
     {
-        if (!url.match(/\?/))
+        if(!url.match(/\?/))
             url += '?'
 
-        if (!url.match(/\?_=/) && !url.match(/&_=/))
+        if(!url.match(/\?_=/) && !url.match(/&_=/))
         {
-            if (url.match(/\?$/))
+            if(url.match(/\?$/))
                 url += '_=' + (ajaxNonce++)
             else
                 url += '&_=' + (ajaxNonce++)
         }
     }
 
-    if (options.data && options.method.match(__methods_with_data__))
+    if(options.data && options.method.match(__methods_with_data__))
     {
         if((! options.contentType ||
             __content_type_post_form__ === options.contentType) &&
@@ -84,7 +84,7 @@ browse.ajax = function(url, options)
         }
     }
 
-    if (options.contentType)
+    if(options.contentType)
     {
         xhr.setRequestHeader('Content-type', options.contentType + '')
     }
@@ -93,7 +93,7 @@ browse.ajax = function(url, options)
         xhr.setRequestHeader('Content-type', __content_type_post_form__)
     }
 
-    if (options.headers)
+    if(options.headers)
     {
         for (var key in headers)
         {
@@ -117,11 +117,11 @@ browse.ajax = function(url, options)
 
 function getXhr()
 {
-    if (window.ActiveXObject)
+    if(window.ActiveXObject)
     {
         // Force ActiveXObject for IE < 8 or in case XMLHttpRequest is
         // not available
-        if (document.documentMode < 8 || !window.XMLHttpRequest)
+        if(document.documentMode < 8 || !window.XMLHttpRequest)
         {
             for(var idx = 0; idx < __ms_ajax_versions__.length; ++idx)
             {
@@ -138,7 +138,7 @@ function getXhr()
         return new XMLHttpRequest()
     }
     else
-    if (window.XMLHttpRequest)
+    if(window.XMLHttpRequest)
     {
         return new XMLHttpRequest()
     }

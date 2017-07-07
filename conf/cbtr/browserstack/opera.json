@@ -163,6 +163,12 @@
           "os": "Mac OSX",
           "osVersion": "Lion",
           "browser": "Opera",
+          "browserVersion": "12.12"
+        },
+        {
+          "os": "Mac OSX",
+          "osVersion": "Lion",
+          "browser": "Opera",
           "browserVersion": "23.0"
         },
         {
@@ -218,12 +224,6 @@
           "osVersion": "Mavericks",
           "browser": "Opera",
           "browserVersion": "38.0"
-        },
-        {
-          "os": "Mac OSX",
-          "osVersion": "Yosemite",
-          "browser": "Opera",
-          "browserVersion": "12.12"
         },
         {
           "os": "Mac OSX",

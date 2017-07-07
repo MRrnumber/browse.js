@@ -1,3 +1,5 @@
+/** global: browse */
+
 var __opacity_regex__ = /^alpha\(opacity=([0-9]+)\)/g
 
 browse.prototype.style = function(property) {
@@ -6,7 +8,7 @@ browse.prototype.style = function(property) {
   }
   if(this.element.currentStyle) {
     property = property.replace(/\-(\w)/g, function(str, letter) {
-      return letter.toUpperCase();
+      return letter.toUpperCase()
     })
     return this.element.currentStyle[property]
   }

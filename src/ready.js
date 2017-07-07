@@ -2,49 +2,64 @@
  * https://github.com/dperini/ContentLoaded
 */
 
+/** global: browse */
+
+var
+  _root = document.documentElement,
+  _modern = document.addEventListener,
+  _add = _modern ? 'addEventListener' : 'attachEvent',
+  _rem = _modern ? 'removeEventListener' : 'detachEvent',
+  _pre = _modern ? '' : 'on'
+
 browse.ready = function(callback) {
   var
-  done = false,
-  top = true,
-  root = document.documentElement,
-  modern = document.addEventListener,
-  add = modern ? 'addEventListener' : 'attachEvent',
-  rem = modern ? 'removeEventListener' : 'detachEvent',
-  pre = modern ? '' : 'on',
-  init = function(e) {
+  init = _readyInit(callback),
+  poll = _readyPoll()
+  if(document.readyState === 'complete') {
+    callback('lazy')
+  }
+  else {
+    _notModernCheck(poll)
+    document[_add](_pre + 'DOMContentLoaded', init, false)
+    document[_add](_pre + 'readystatechange', init, false)
+    window[_add](_pre + 'load', init, false)
+  }
+}
+
+function _readyInit(callback) {
+  var done = false
+  var init = function(e) {
     if(e.type === 'readystatechange' && document.readyState !== 'complete') {
       return
     }
-    (e.type === 'load' ? window : document)[rem](pre + e.type, init, false)
-    if(!done && (done = true)) {
+    (e.type === 'load' ? window : document)[_rem](_pre + e.type, init, false)
+    if(!done) {
+      done = true
       callback(e.type) // || e
     }
-  },
-  poll = function() {
+  }
+  return init
+}
+
+function _readyPoll() {
+  var poll = function() {
     try {
-      root.doScroll('left')
+      _root.doScroll('left')
     } catch(e) {
       setTimeout(poll, 20)
       return
     }
     init('poll')
   }
-  if(document.readyState === 'complete') {
-    callback('lazy')
-  }
-  else {
-    if(!modern && root.doScroll) {
-      try {
-        top = !window.frameElement
-      } catch(e) {
-        // ignore
-      }
-      if(top) {
-        poll()
-      }
+  return poll
+}
+
+function _notModernCheck(poll) {
+  try {
+    if(!_modern && _root.doScroll && !window.frameElement) {
+      poll()
     }
-    document[add](pre + 'DOMContentLoaded', init, false)
-    document[add](pre + 'readystatechange', init, false)
-    window[add](pre + 'load', init, false)
+  } catch(e) {
+    // ignore
   }
 }
