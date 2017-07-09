@@ -6,7 +6,9 @@ class.js
 position.js
 events.js
 inputs.js
-css.js
+style.js
+opacity.js
+display.js
 animation.js
 ready.js
 capabilities.js

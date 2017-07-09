@@ -1,10 +1,10 @@
-function forEach(callback) {
+function _forEach(callback) {
   for(var idx = 0; idx < this.length; ++idx) {
     callback(this[idx], idx, this)
   }
 }
 
-function every(callback) {
+function _every(callback) {
   for(var idx = 0; idx < this.length; ++idx) {
     if(! callback(this[idx], idx, this)) {
       return
@@ -13,8 +13,8 @@ function every(callback) {
 }
 
 /* eslint-disable no-extend-native */
-Array.prototype.forEach = Array.prototype.forEach || forEach
-Array.prototype.every = Array.prototype.every || every
+Array.prototype.forEach = Array.prototype.forEach || _forEach
+Array.prototype.every = Array.prototype.every || _every
 
 Array.prototype.indexOf = Array.prototype.indexOf || function(member) {
   for(var idx = 0; idx < this.length; ++idx) {
@@ -34,6 +34,6 @@ Array.prototype.remove = function(member, howMany) {
 /* eslint-enable no-extend-native */
 
 if(window.NodeList) {
-  window.NodeList.prototype.forEach = window.NodeList.prototype.forEach || forEach
-  window.NodeList.prototype.every = window.NodeList.prototype.every || every
+  window.NodeList.prototype.forEach = window.NodeList.prototype.forEach || _forEach
+  window.NodeList.prototype.every = window.NodeList.prototype.every || _every
 }

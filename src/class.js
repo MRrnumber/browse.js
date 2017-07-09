@@ -1,25 +1,24 @@
 /** global: browse */
 
 browse.prototype.hasClass = function(className) {
-  if(emptyClassName(className)) {
+  if(_emptyClassName(className)) {
     return false
   }
   var element = this.element
-  if(classListHasCheck(element, className)) {
+  if(_classListHasCheck(element, className)) {
     return true
   }
   else if('className' in element) {
     return ((' '+element.className+' ').indexOf(' '+className+' ') > -1)
   }
-  return false
 }
 
 browse.prototype.addClass = function(className) {
-  if(emptyClassName(className)) {
+  if(_emptyClassName(className)) {
     return this
   }
   var element = this.element
-  if(classListHasNotCheck(element, className)) {
+  if(_classListHasNotCheck(element, className)) {
     element.classList.add(className)
   }
   else if('className' in element) {
@@ -31,11 +30,11 @@ browse.prototype.addClass = function(className) {
 }
 
 browse.prototype.removeClass = function(className) {
-  if(emptyClassName(className)) {
+  if(_emptyClassName(className)) {
     return this
   }
   var element = this.element
-  if(classListHasCheck(element, className)) {
+  if(_classListHasCheck(element, className)) {
     element.classList.remove(className)
   }
   else if('className' in element) {
@@ -48,14 +47,14 @@ browse.prototype.removeClass = function(className) {
   return this
 }
 
-function emptyClassName(className) {
+function _emptyClassName(className) {
   return (!className || className.match(/ /))
 }
 
-function classListHasCheck(element, className) {
+function _classListHasCheck(element, className) {
   return('classList' in element && element.classList.contains(className))
 }
 
-function classListHasNotCheck(element, className) {
+function _classListHasNotCheck(element, className) {
   return('classList' in element && !element.classList.contains(className))
 }

@@ -27,9 +27,7 @@ before_script:
   - npm run instrument
 
 after_script:
-  - npm run coverage-report
-  - npm run codecov-upload
-  - npm run coveralls-upload
+  - npm run coverage
 
 addons:
   apt:

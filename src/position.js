@@ -5,21 +5,17 @@ browse.prototype.topLeft = function() {
   if(element.getBoundingClientRect) {
     var rect = element.getBoundingClientRect()
     return {
-      top : rect.top + getCurrY() - browse.capabilities.adjustOffsetY,
-      left: rect.left + getCurrX() - browse.capabilities.adjustOffsetX
+      top : rect.top + _getCurrY() - browse.capabilities.adjustOffsetY,
+      left: rect.left + _getCurrX() - browse.capabilities.adjustOffsetX
     }
   }
   throw new Error('No support for getBoundingClientRect')
 }
 
-function getCurrX() {
+function _getCurrX() {
   return window.scrollX || window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft
 }
 
-browse.getCurrX = getCurrX
-
-function getCurrY() {
+function _getCurrY() {
   return window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
 }
-
-browse.getCurrY = getCurrY

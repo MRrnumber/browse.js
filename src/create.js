@@ -1,10 +1,10 @@
 /** global: browse */
 
 browse.prototype.append = function(html, tagName) {
-  if(safeInsertAdjacentHtml(this.element, 'beforeend', html)) {
+  if(_safeInsertAdjacentHtml(this.element, 'beforeend', html)) {
     return this
   }
-  var temp = deriveTagAndSafeSetInnerHTML(this.element, html, tagName)
+  var temp = _deriveTagAndSafeSetInnerHTML(this.element, html, tagName)
   while(temp.childNodes.length) {
     this.element.appendChild(temp.childNodes[0])
   }
@@ -12,43 +12,43 @@ browse.prototype.append = function(html, tagName) {
 }
 
 browse.prototype.prepend = function(html, tagName) {
-  if(safeInsertAdjacentHtml(this.element, 'afterbegin', html)) {
+  if(_safeInsertAdjacentHtml(this.element, 'afterbegin', html)) {
     return this
   }
-  var temp = deriveTagAndSafeSetInnerHTML(this.element, html, tagName)
+  var temp = _deriveTagAndSafeSetInnerHTML(this.element, html, tagName)
   var firstChild = this.element.firstChild
   while(temp.childNodes.length) {
-    insertBeforeOrAppendChild(firstChild, this.element, temp.childNodes[0])
+    _insertBeforeOrAppendChild(firstChild, this.element, temp.childNodes[0])
   }
   return this
 }
 
 browse.prototype.after = function(html, tagName) {
-  if(quickAfterBefore(this.element, html, 'afterend')) {
+  if(_quickAfterBefore(this.element, html, 'afterend')) {
     return this
   }
-  var temp = deriveTagAndSafeSetInnerHTML(this.element.parentNode, html, tagName, 'div')
+  var temp = _deriveTagAndSafeSetInnerHTML(this.element.parentNode, html, tagName, 'div')
   var next = this.next() && this.next().element || null
   while(temp.childNodes.length) {
-    insertBeforeOrAppendChild(next, this.element.parentNode, temp.childNodes[0])
+    _insertBeforeOrAppendChild(next, this.element.parentNode, temp.childNodes[0])
   }
   return this
 }
 
 browse.prototype.before = function(html, tagName) {
-  if(quickAfterBefore(this.element, html, 'beforebegin')) {
+  if(_quickAfterBefore(this.element, html, 'beforebegin')) {
     return this
   }
-  var temp = deriveTagAndSafeSetInnerHTML(this.element.parentNode, html, tagName, 'div')
+  var temp = _deriveTagAndSafeSetInnerHTML(this.element.parentNode, html, tagName, 'div')
   while(temp.childNodes.length) {
     this.element.parentNode.insertBefore(temp.childNodes[0], this.element)
   }
   return this
 }
 
-function quickAfterBefore(element, html, spec) {
+function _quickAfterBefore(element, html, spec) {
   var tag = element.tagName.toLowerCase()
-  if(-1 !== ['html', 'body'].indexOf(tag) || safeInsertAdjacentHtml(element, spec, html)) {
+  if(-1 !== ['html', 'body'].indexOf(tag) || _safeInsertAdjacentHtml(element, spec, html)) {
     return true
   }
   return false
@@ -56,7 +56,7 @@ function quickAfterBefore(element, html, spec) {
 
 var __ie_invalid_target__ = /Invalid target element for this operation/
 
-function safeInsertAdjacentHtml(element, spec, html) {
+function _safeInsertAdjacentHtml(element, spec, html) {
   if(!element.insertAdjacentHTML) {
     return false
   }
@@ -69,14 +69,14 @@ function safeInsertAdjacentHtml(element, spec, html) {
   }
 }
 
-function deriveTagAndSafeSetInnerHTML(element, html, tagName, defTag) {
+function _deriveTagAndSafeSetInnerHTML(element, html, tagName, defTag) {
   tagName = tagName || element && element.tagName.toLowerCase() || defTag
   var temp = document.createElement(tagName)
-  safeSetInnerHTML(temp, html)
+  _safeSetInnerHTML(temp, html)
   return temp
 }
 
-function safeSetInnerHTML(element, html) {
+function _safeSetInnerHTML(element, html) {
   try {
     element.innerHTML = html
   }
@@ -85,14 +85,11 @@ function safeSetInnerHTML(element, html) {
   }
 }
 
-function insertBeforeOrAppendChild(before, par, what)
-{
-  if(before)
-  {
+function _insertBeforeOrAppendChild(before, par, what) {
+  if(before) {
     par.insertBefore(what, before)
   }
-  else
-  {
+  else {
     par.appendChild(what)
   }
 }

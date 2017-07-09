@@ -56,8 +56,8 @@ browse.prototype.scrollY = function(toY, duration) {
   }
   duration = duration < __frame_interval__ ?  __frame_interval__ : duration
   var element = this.element,
-    currX = getCurrX(),
-    currY = getCurrY()
+    currX = _getCurrX(),
+    currY = _getCurrY(),
     step = Math.ceil(((toY - currY) * __frame_interval__) / duration),
     direction = currY < toY ? 'down' : 'up'
   var tick = function() {
