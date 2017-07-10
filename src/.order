@@ -4,6 +4,10 @@ relatives.js
 create.js
 class.js
 position.js
+events.js
+mouse-events.js
+keyboard-events.js
+html-events.js
 controls.js
 style.js
 opacity.js

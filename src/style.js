@@ -16,7 +16,11 @@ function _getStyle(element, property) {
     return document.defaultView.getComputedStyle(element, null).getPropertyValue(property)
   }
   else /*if(element.currentStyle)*/ {
-    return element.currentStyle[_toCamelCase(property)]
+    var value = element.currentStyle[_toCamelCase(property)]
+    if(/^\d+(ch|cm|em|ex|in|mm|%|pc|pt|rem|vh|vw)?$/i.test(value)) { 
+      value = _handleCssUnit(element, value)
+    }
+    return value
   }
 }
 
@@ -24,4 +28,16 @@ function _toCamelCase(property) {
   return property.replace(/\-(\w)/g, function(str, letter) {
     return letter.toUpperCase()
   })
+}
+
+function _handleCssUnit(element, value) {
+  // courtesy: https://stackoverflow.com/a/2664055/3348386
+  var saveLeft = element.style.left,
+    saveRtLeft = element.runtimeStyle.left
+  element.runtimeStyle.left = element.currentStyle.left
+  element.style.left = value
+  value = element.style.pixelLeft + "px"
+  element.style.left = saveLeft
+  element.runtimeStyle.left = saveRtLeft
+  return value
 }

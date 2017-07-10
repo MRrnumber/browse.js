@@ -10,17 +10,9 @@ browse.prototype.value = function(value) {
 
 function _getValue(element) {
   if('value' in element) {
-    if(!element.value) {
-      var tagName = element.tagName.toLowerCase()
-      if('option' === tagName) {
-        return element.innerHTML
-      }
-      else if('input' === tagName) {
-        var onTypes = ['radio', 'checkbox']
-        if(-1 !== onTypes.indexOf(element.type)) {
-          return 'on'
-        }
-      }
+    var def
+    if(!element.value && (def = _handleFalsyVal(element))) {
+      return def
     }
     return element.value
   }
@@ -40,6 +32,18 @@ function _setValue(element, value) {
     return
   }
   throw new TypeError('Element does not support entering or selecting a value')
+}
+
+var _onTypes = ['radio', 'checkbox']
+
+function _handleFalsyVal(element) {
+  var tagName = element.tagName.toLowerCase()
+  if('option' === tagName) {
+    return element.innerHTML
+  }
+  if('input' === tagName && -1 !== _onTypes.indexOf(element.type)) {
+    return 'on'
+  }
 }
 
 function _setSelectValue(element, value) {
