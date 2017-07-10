@@ -17,7 +17,7 @@ function _getOpacity(style) {
   if('opacity' in style) {
     return style.opacity !== '' ? parseFloat(style.opacity) : 1.0
   }
-  else if('filter' in style) {
+  else /*if('filter' in style)*/ {
     var match = __ie_opacity_regex__.exec(style.filter)
     return null !== match ? parseFloat(match[1]) / 100 : 1.0
   }
@@ -31,7 +31,7 @@ function _setOpacity(style, value) {
   if('opacity' in style) {
     style.opacity = parseFloat(value)
   }
-  else if('filter' in style) {
+  else /*if('filter' in style)*/ {
     var match = __ie_opacity_regex__.exec(style.filter)
     var valueStr = 'alpha(opacity=' + (100 * value) + ')'
     style.filter = (null === match)

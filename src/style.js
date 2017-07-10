@@ -15,7 +15,7 @@ function _getStyle(element, property) {
   if(document.defaultView && document.defaultView.getComputedStyle) {
     return document.defaultView.getComputedStyle(element, null).getPropertyValue(property)
   }
-  else if(element.currentStyle) {
+  else /*if(element.currentStyle)*/ {
     return element.currentStyle[_toCamelCase(property)]
   }
 }

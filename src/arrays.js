@@ -33,7 +33,11 @@ Array.prototype.remove = function(member, howMany) {
 }
 /* eslint-enable no-extend-native */
 
-if(window.NodeList) {
-  window.NodeList.prototype.forEach = window.NodeList.prototype.forEach || _forEach
-  window.NodeList.prototype.every = window.NodeList.prototype.every || _every
-}
+var _arrayTypes = [ 'NodeList', 'HTMLCollection' ]
+
+_arrayTypes.forEach(function(type) {
+  if(window[type]) {
+    window[type].prototype.forEach = window[type].prototype.forEach || _forEach
+    window[type].prototype.every = window[type].prototype.every || _every
+  }
+})

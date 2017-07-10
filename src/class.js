@@ -8,7 +8,7 @@ browse.prototype.hasClass = function(className) {
   if(_classListHasCheck(element, className)) {
     return true
   }
-  else if('className' in element) {
+  else /*if('className' in element)*/ {
     return ((' '+element.className+' ').indexOf(' '+className+' ') > -1)
   }
 }
@@ -21,7 +21,7 @@ browse.prototype.addClass = function(className) {
   if(_classListHasNotCheck(element, className)) {
     element.classList.add(className)
   }
-  else if('className' in element) {
+  else /*if('className' in element)*/ {
     if((' '+element.className+' ').indexOf(' '+className+' ') === -1) {
       element.className += ' ' + className
     }
@@ -37,7 +37,7 @@ browse.prototype.removeClass = function(className) {
   if(_classListHasCheck(element, className)) {
     element.classList.remove(className)
   }
-  else if('className' in element) {
+  else /*if('className' in element)*/ {
     var existingWithSpaces = ' ' + element.className + ' '
     var argumentWithSpaces = new RegExp(' ' + className + ' ', 'g')
     if(existingWithSpaces.match(argumentWithSpaces)) {

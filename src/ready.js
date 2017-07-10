@@ -29,13 +29,15 @@ browse.ready = function(callback) {
 function _readyInit(callback) {
   var done = false
   var init = function(e) {
-    if(e.type === 'readystatechange' && document.readyState !== 'complete') {
-      return
+    if('object' === typeof(e)) {
+      if(e.type === 'readystatechange' && document.readyState !== 'complete') {
+        return
+      }
+      (e.type === 'load' ? window : document)[_rem](_pre + e.type, init, false)
     }
-    (e.type === 'load' ? window : document)[_rem](_pre + e.type, init, false)
     if(!done) {
       done = true
-      callback(e.type) // || e
+      callback(('object' === typeof(e) && e.type) || e)
     }
   }
   return init

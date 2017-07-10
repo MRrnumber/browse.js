@@ -5,7 +5,7 @@ create.js
 class.js
 position.js
 events.js
-inputs.js
+controls.js
 style.js
 opacity.js
 display.js
