@@ -6,6 +6,3 @@ filter:
     - scripts/
     - tests/
     - src/ajax.js
-    - src/inputs.js
-    - src/events.js
-    - src/animation.js

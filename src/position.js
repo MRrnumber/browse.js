@@ -19,3 +19,6 @@ function _getCurrX() {
 function _getCurrY() {
   return window.scrollY || window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
 }
+
+browse.getCurrX = _getCurrX
+browse.getCurrY = _getCurrY

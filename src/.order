@@ -12,5 +12,6 @@ controls.js
 style.js
 opacity.js
 display.js
+animation.js
 ready.js
 capabilities.js

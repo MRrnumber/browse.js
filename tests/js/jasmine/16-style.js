@@ -1,8 +1,14 @@
 describe('style', function() {
 
-  function log(message) {
+  function log() {
     if(window.console && window.console.log) {
-      window.console.log(message)
+      if(window.console.log.apply) {
+        window.console.log.apply(window.console, arguments)
+      }
+      else {
+        var message = Array.prototype.join.call(arguments, ' ')
+        window.console.log(message)
+      }
     }
   }
 

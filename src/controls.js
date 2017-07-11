@@ -44,6 +44,7 @@ function _handleFalsyVal(element) {
   if('input' === tagName && -1 !== _onTypes.indexOf(element.type)) {
     return 'on'
   }
+  return undefined
 }
 
 function _setSelectValue(element, value) {

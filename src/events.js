@@ -11,7 +11,7 @@ eventTypes.forEach(function(type) {
 
 var
   __html_events_regex__ = /^(change)$/,
-  __keyboard_events_regex__ = /^(keyup)$/
+  __keyboard_events_regex__ = /^(keyup)$/,
   __mouse_events_regex__ = /^(click)$/
 
 browse.prototype.trigger = function(type, params) {

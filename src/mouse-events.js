@@ -40,6 +40,7 @@ function _createMouseEvent(type, params) {
 }
 
 function _nonIeMouseEvent(type, input) {
+  var e
   try {
     e = new window.MouseEvent(type, input)
   }
@@ -54,7 +55,7 @@ function _nonIeMouseEvent(type, input) {
 }
 
 function _ieMouseEvent(type, input) {
-  e = document.createEventObject()
+  var e = document.createEventObject()
   e.type = type
   for(var key in input) {
     if(input.hasOwnProperty(key)) {

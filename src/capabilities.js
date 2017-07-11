@@ -39,8 +39,8 @@ function _testFixedPos() {
 
 function _remPosAndScroll(x, y) {
   var s = {
-    sX: window.scrollX || window.pageXOffset,
-    sY: window.scrollY || window.pageYOffset
+    sX: _getCurrX(),
+    sY: _getCurrY()
   }
   window.scrollTo(x, y)
   return s

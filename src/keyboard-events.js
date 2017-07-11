@@ -44,6 +44,7 @@ function _createKeyboardEvent(type, params) {
 }
 
 function _nonIeKbEvent(type, input) {
+  var e
   try {
     e = new window.KeyboardEvent(type, input)
   }
@@ -61,7 +62,7 @@ function _nonIeKbEvent(type, input) {
 }
 
 function _ieKbEvent(type, input) {
-  e = document.createEventObject()
+  var e = document.createEventObject()
   e.type = type
   for(var key in input) {
     if(input.hasOwnProperty(key)) {

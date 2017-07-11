@@ -2,7 +2,13 @@ describe('onkeyup', function() {
 
   function log() {
     if(window.console && window.console.log) {
-      window.console.log.apply(window.console, arguments)
+      if(window.console.log.apply) {
+        window.console.log.apply(window.console, arguments)
+      }
+      else {
+        var message = Array.prototype.join.call(arguments, ' ')
+        window.console.log(message)
+      }
     }
   }
 
