@@ -1,8 +1,17 @@
 /** global: browse */
 
+browse.prototype.getClass = function() {
+  if('classList' in this.element) {
+    return this.element.classList.value
+  }
+  else {
+    return this.element.className
+  }
+}
+
 browse.prototype.hasClass = function(className) {
-  if(_emptyClassName(className)) {
-    return false
+  if(_badClassName(className)) {
+    throw new Error('Expected a valid class name')
   }
   var element = this.element
   if(_classListHasCheck(element, className)) {
@@ -14,8 +23,8 @@ browse.prototype.hasClass = function(className) {
 }
 
 browse.prototype.addClass = function(className) {
-  if(_emptyClassName(className)) {
-    return this
+  if(_badClassName(className)) {
+    throw new Error('Expected a valid class name')
   }
   var element = this.element
   if(_classListHasNotCheck(element, className)) {
@@ -30,8 +39,8 @@ browse.prototype.addClass = function(className) {
 }
 
 browse.prototype.removeClass = function(className) {
-  if(_emptyClassName(className)) {
-    return this
+  if(_badClassName(className)) {
+    throw new Error('Expected a valid class name')
   }
   var element = this.element
   if(_classListHasCheck(element, className)) {
@@ -47,8 +56,8 @@ browse.prototype.removeClass = function(className) {
   return this
 }
 
-function _emptyClassName(className) {
-  return (!className || className.match(/ /))
+function _badClassName(className) {
+  return(!className || className.match(/ /))
 }
 
 function _classListHasCheck(element, className) {

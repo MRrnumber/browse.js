@@ -52,11 +52,11 @@ function _nonIeKbEvent(type, input) {
     e = document.createEvent('Events')
     e.initEvent(type, input.bubbles, input.cancelable)
     e.view = input.view
-    _allowedKeyboardEventParams.forEach(function(key) {
-      if(key in input) {
+    for(var key in input) {
+      if(-1 !== _allowedKeyboardEventParams.indexOf(key)) {
         e[key] = input[key]
       }
-    })
+    }
   }
   return e
 }
@@ -64,11 +64,11 @@ function _nonIeKbEvent(type, input) {
 function _ieKbEvent(type, input) {
   var e = document.createEventObject()
   e.type = type
+  /* eslint-disable guard-for-in */
   for(var key in input) {
-    if(input.hasOwnProperty(key)) {
-      e[key] = input[key]
-    }
+    e[key] = input[key]
   }
+  /* eslint-enable guard-for-in */
   return e
 }
 

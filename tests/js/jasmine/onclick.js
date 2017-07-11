@@ -1,17 +1,5 @@
 describe('onclick', function() {
 
-  function log() {
-    if(window.console && window.console.log) {
-      if(window.console.log.apply) {
-        window.console.log.apply(window.console, arguments)
-      }
-      else {
-        var message = Array.prototype.join.call(arguments, ' ')
-        window.console.log(message)
-      }
-    }
-  }
-
   it('should attach an event handler for click event that gets called on triggering click', function() {
     var button = $_(document.body).append('<input type=submit value=abc>').lastChild()
     var spy = {

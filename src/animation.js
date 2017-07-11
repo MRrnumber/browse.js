@@ -81,9 +81,7 @@ function _fadeInTick(obj, step, callback, queueFn) {
       queueFn()
       return
     }
-    if(callback) {
-      callback(obj)
-    }
+    callback(obj)
   }
   return tick
 }
@@ -99,9 +97,7 @@ function _fadeOutTick(obj, step, callback, queueFn) {
       return
     }
     obj.hide()
-    if(callback) {
-      callback(obj)
-    }
+    callback(obj)
   }
   return tick
 }
@@ -116,9 +112,7 @@ function _scrollYTick(obj, currX, currY, toY, step, direction, callback, queueFn
       queueFn()
       return
     }
-    if(callback) {
-      callback(obj)
-    }
+    callback(obj)
   }
   return tick
 }

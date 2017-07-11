@@ -70,7 +70,7 @@ function _safeInsertAdjacentHtml(element, spec, html) {
 }
 
 function _deriveTagAndSafeSetInnerHTML(element, html, tagName, defTag) {
-  tagName = tagName || element && element.tagName.toLowerCase() || defTag
+  tagName = tagName || element && element.tagName.toLowerCase().replace(/body/, '') || defTag
   var temp = document.createElement(tagName)
   _safeSetInnerHTML(temp, html)
   return temp

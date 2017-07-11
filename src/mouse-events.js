@@ -57,11 +57,11 @@ function _nonIeMouseEvent(type, input) {
 function _ieMouseEvent(type, input) {
   var e = document.createEventObject()
   e.type = type
+  /* eslint-disable guard-for-in */
   for(var key in input) {
-    if(input.hasOwnProperty(key)) {
-      e[key] = input[key]
-    }
+    e[key] = input[key]
   }
+  /* eslint-enable guard-for-in */
   return e
 }
 

@@ -11,12 +11,12 @@ function _detectIeOffset() {
   var rect = document.body.getBoundingClientRect()
   var marginLeft = parseInt($_(document.body).style('margin-left'), 10)
   var marginTop = parseInt($_(document.body).style('margin-top'), 10)
-  if(!marginLeft) {
+  /*if(!marginLeft) {
     marginLeft = 0
   }
   if(!marginTop) {
     marginTop = 0
-  }
+  }*/
   browse.capabilities.adjustOffsetY = rect.top + _getCurrY() - marginTop
   browse.capabilities.adjustOffsetX = rect.left + _getCurrX() - marginLeft
 }

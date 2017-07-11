@@ -24,6 +24,9 @@ browse.prototype.trigger = function(type, params) {
   else if(type.match(__mouse_events_regex__)) {
     _dispatchEvent(this.element, _createMouseEvent(type, params))
   }
+  else {
+    throw new Error('Unsupported event ' + type)
+  }
 }
 
 function _addEventHandler(element, callback, eventName) {
@@ -48,14 +51,14 @@ function _dispatchEvent(element, e) {
 
 function _eventDataFromDefsAndParams(defs, allowed, params) {
   var input = { }
+  /* eslint-disable guard-for-in */
   for(var key in defs) {
-    if(defs.hasOwnProperty(key)) {
-      input[key] = defs[key]
-    }
+    input[key] = defs[key]
   }
+  /* eslint-enable guard-for-in */
   if(params) {
     for(key in params) {
-      if(defs.hasOwnProperty(key) && -1 !== allowed.indexOf(key)) {
+      if(-1 !== allowed.indexOf(key)) {
         input[key] = params[key]
       }
     }
