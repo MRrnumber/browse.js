@@ -25,6 +25,8 @@ before_install:
 
 before_script:
   - npm run instrument
+  - npm run build-test-js
+  - npm run test-server &
 
 after_script:
   - npm run coverage

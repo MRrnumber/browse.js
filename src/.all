@@ -13,5 +13,10 @@ style.js
 opacity.js
 display.js
 animation.js
+ajax.js
+ajax-request.js
+ajax-timeout.js
+ajax-data.js
+ajax-response.js
 ready.js
 capabilities.js

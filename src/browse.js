@@ -1,5 +1,5 @@
 function browse(element) {
-  if(!element || !isDOMElement(element)) {
+  if(!element || !_isDOMElement(element)) {
     return null
   }
   if(element.$_) {
@@ -15,7 +15,7 @@ function _create(element) {
 
 _create.prototype = browse.prototype
 
-/*function isDOMNode(obj){
+/*function _isDOMNode(obj){
   return (
     typeof Node === "object"
     ? obj instanceof Node
@@ -23,7 +23,7 @@ _create.prototype = browse.prototype
   )
 }*/
 
-function isDOMElement(obj){
+function _isDOMElement(obj){
   return (
     typeof window.HTMLElement === "object"
     ? obj instanceof window.HTMLElement

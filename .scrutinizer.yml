@@ -5,4 +5,3 @@ filter:
     - lib/
     - scripts/
     - tests/
-    - src/ajax.js

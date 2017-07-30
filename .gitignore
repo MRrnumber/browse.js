@@ -42,5 +42,6 @@ BrowserStackLocal*
 # Swap files
 .*swp
 
-# Instrumented code
+# Instrumented/Created code
 browse.inst.js
+__all__.js
