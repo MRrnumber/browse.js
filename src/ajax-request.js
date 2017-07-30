@@ -44,6 +44,9 @@ function _contentType(xhr, options) {
   /*else if(options.contentType.match(__content_multipart_regex__)) {
     xhr.setRequestHeader('Content-type', __content_multipart__)
   }*/
+  else {
+    throw new Error('Unsupported content type ' + options.contentType)
+  }
 }
 
 function _dontNeedContentType(options) {

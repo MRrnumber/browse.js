@@ -21,9 +21,9 @@ function _data(options) {
   /*else if(options.contentType.match(__content_multipart_regex__)) {
     options.data = _multipart(options.data)
   }*/
-  /*else {
+  else {
     throw new Error('Unsupported content type ' + options.contentType)
-  }*/
+  }
 }
 
 function _needProcessData(options) {

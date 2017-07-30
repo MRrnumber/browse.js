@@ -87,7 +87,7 @@ Returns next HTML element sibling of an HTML element, or `null` if there is no s
 var div = $_(document.getElementById('my-div'))
 var ret = div.previous()
 ```
-Returns previous HTML element sibling of an HTML element, or `null` if there is no such sibline.
+Returns previous HTML element sibling of an HTML element, or `null` if there is no such sibling.
 ### append
 ```html
 <div id=my-div></div>

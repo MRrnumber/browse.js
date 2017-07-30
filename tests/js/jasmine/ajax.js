@@ -311,6 +311,42 @@ describe('ajax', function() {
       }, 'done to set true', 10000)
     })
 
+    it('should throw error while processing unsupported content-type', function() {
+      expect(function() {
+        $_.ajax(httpHost + '/form-json', {
+          method: 'POST',
+          data: "some data",
+          contentType: "text/xml",
+          success: function(response, status, url, xhr) {
+            expect('success should not have been called').toEqual(false)
+            expect(response).toBeUndefined()
+          },
+          error: function(response, status, url, xhr) {
+            expect('error should not have been called').toEqual(false)
+            expect(response).toBeUndefined()
+          }
+        })
+      }).toThrow(new Error('Unsupported content type text/xml'))
+    })
+
+    it('should throw error while processing data in case of unsupported content-type', function() {
+      expect(function() {
+        $_.ajax(httpHost + '/form-json', {
+          method: 'POST',
+          data: {x: 1, y: 2},
+          contentType: "text/xml",
+          success: function(response, status, url, xhr) {
+            expect('success should not have been called').toEqual(false)
+            expect(response).toBeUndefined()
+          },
+          error: function(response, status, url, xhr) {
+            expect('error should not have been called').toEqual(false)
+            expect(response).toBeUndefined()
+          }
+        })
+      }).toThrow(new Error('Unsupported content type text/xml'))
+    })
+
     it('should call error for 400 status code caused by bad json in request body', function() {
       var done = false
       runs(function() {
