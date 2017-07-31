@@ -2,7 +2,7 @@
 
 browse.prototype.getClass = function() {
   if('classList' in this.element) {
-    return this.element.classList.value
+    return this.element.classList.value || Array.prototype.join.call(this.element.classList, ' ')
   }
   else {
     return this.element.className

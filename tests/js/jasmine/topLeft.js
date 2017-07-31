@@ -56,7 +56,7 @@ describe('topLeft', function() {
 
   it('should return identical values through window scrolling for element with fixed position', function() {
     if(! $_.capabilities.fixedPosition) {
-      throw new Error('Browser does not support absolute position')
+      throw new Error('Browser does not support fixed position')
     }
     $_(document.body).append('<div id=topleft-fixed style=position:fixed;top:100px;left:100px></div>')
     var div = document.body.$_.lastChild()
