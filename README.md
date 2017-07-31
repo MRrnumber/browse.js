@@ -1,36 +1,51 @@
 [![Build Status](https://travis-ci.org/browsejs/browse.js.svg?branch=master)](https://travis-ci.org/browsejs/browse.js) [![codecov](https://codecov.io/gh/browsejs/browse.js/branch/master/graph/badge.svg)](https://codecov.io/gh/browsejs/browse.js) [![Coverage Status](https://coveralls.io/repos/github/browsejs/browse.js/badge.svg?branch=master)](https://coveralls.io/github/browsejs/browse.js?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/browsejs/browse.js/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/browsejs/browse.js/?branch=master) [![Code Climate](https://codeclimate.com/github/browsejs/browse.js.svg)](https://codeclimate.com/github/browsejs/browse.js)
 # browse.js
 Lightweight library of abstractions for cross-browser compatibility
+
+- [Status](#status)
+- [APIs](#apis)
+- [Browser Compatibility Testing](#browser-compatibility-testing)
+    - [Browsers Versions](#browsers-versions)
+    - [Tools](#tools)
+- [Testing](#testing)
+    - [Code Coverage](#code-coverage)
+- [Limitations](#limitations)
+    - [Browser Limitations](#browser-limitations)
+    - [Test Limitations](#test-limitations)
+- [Acknowledgements](#acknowledgements)
+
 ## Status
-Browsers|![Chrome](doc/img/browsers/chrome.png)|![Firefox](doc/img/browsers/firefox.png)|![Internet Explorer](doc/img/browsers/internet-explorer.png)|![Opera](doc/img/browsers/opera.png)|![Safari](doc/img/browsers/safari.png)|![Android/Android Browser](doc/img/browsers/android-browser.png)|![iOS/Mobile Safari](doc/img/browsers/mobile-safari.png)|![Edge](doc/img/browsers/edge.png)|![Opera Mobile Browser](doc/img/browsers/opera-browser.png)|![Yandex](doc/img/browsers/yandex.png)
--|-|-|-|-|-|-|-|-|-|-
-[ready](#ready)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[firstChild](#firstchild)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[lastChild](#lastchild)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[next](#next)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[previous](#previous)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[append](#append)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[prepend](#prepend)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[after](#after)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[before](#before)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[getClass](#getclass)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[hasClass](#hasclass)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[addClass](#addclass)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[removeClass](#removeclass)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[style](#style)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[opacity](#opacity)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[hide](#hide)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[show](#show)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[fadeOut](#fadeout)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[fadeIn](#fadein)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[topLeft](#topleft)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[scrollY](#scrolly)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[value](#value)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[onclick](#onclick)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[onkeyup](#onkeyup)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[onchange](#onchange)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[trigger](#trigger)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[ajax](#ajax)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+> These are the [browsers versions](#browsers-versions) used for testing
+
+API|Issues|Browser Limitations|![Chrome](doc/img/browsers/chrome.png)|![Firefox](doc/img/browsers/firefox.png)|![Internet Explorer](doc/img/browsers/internet-explorer.png)|![Opera](doc/img/browsers/opera.png)|![Safari](doc/img/browsers/safari.png)|![Android/Android Browser](doc/img/browsers/android-browser.png)|![iOS/Mobile Safari](doc/img/browsers/mobile-safari.png)|![Edge](doc/img/browsers/edge.png)|![Opera Mobile Browser](doc/img/browsers/opera-browser.png)|![Yandex](doc/img/browsers/yandex.png)
+-|-|-|-|-|-|-|-|-|-|-|-|-
+[ready](#ready)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[firstChild](#firstchild)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[lastChild](#lastchild)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[next](#next)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[previous](#previous)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[append](#append)||[1](https://github.com/browsejs/browse.js/issues/1)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[prepend](#prepend)||[1](https://github.com/browsejs/browse.js/issues/1)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[after](#after)||[1](https://github.com/browsejs/browse.js/issues/1)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[before](#before)||[1](https://github.com/browsejs/browse.js/issues/1)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[getClass](#getclass)|[7](https://github.com/browsejs/browse.js/issues/7)||✗ 15-49|✗ 3.6 4-46|✗ 10 11|✗ 15-17 20-36| 5.1 6.0 6.2 7.1|✗ 4 4.1 4.2|✗ 5.1 (iOS 5 5.1) 6 (iOS 6) 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[hasClass](#hasclass)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[addClass](#addclass)|[8](https://github.com/browsejs/browse.js/issues/8)||✗ 15-49|✗ 3.6 4-46|✗ 10 11|✗ 15-17 20-36| 5.1 6.0 6.2 7.1|✗ 4 4.1 4.2|✗ 5.1 (iOS 5 5.1) 6 (iOS 6) 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[removeClass](#removeclass)|[9](https://github.com/browsejs/browse.js/issues/9)||✗ 15-49|✗ 3.6 4-46|✗ 10 11|✗ 15-17 20-36| 5.1 6.0 6.2 7.1|✗ 4 4.1 4.2|✗ 5.1 (iOS 5 5.1) 6 (iOS 6) 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[style](#style)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[opacity](#opacity)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[hide](#hide)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[show](#show)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[fadeOut](#fadeout)|[11](https://github.com/browsejs/browse.js/issues/11) [10](https://github.com/browsejs/browse.js/issues/10)||✗ 19-20 22 29-32 34-38 43-44 51-52 54-59|✗ 3.6 4 9-10 17-18 21-22 24-25 27 31 33-34 41 45-50 53|✗ 6 8 10 11|✗ 16-17 20-24 27-32 40 43-45|✗ 4 5|✗ 2.2 2.3 4 4.1 4.2|✗ 4 (iOS 3.2) 4 (iOS 4) 5 (iOS 4.3) 5.1 (iOS 5 5.1) 7 (iOS 7)|✗ 14 15|✓|✗ 14.12
+[fadeIn](#fadein)|[11](https://github.com/browsejs/browse.js/issues/11) [10](https://github.com/browsejs/browse.js/issues/10) [3](https://github.com/browsejs/browse.js/issues/3)||✗ 19-20 22 29-32 34-38 43-44 51-52 54-59|✗ 3.6 4 9-10 17-18 21-22 24-25 27 31 33-34 41 45-50 53|✗ 6 8 10 11|✗ 16-17 20-24 27-32 40 43-45|✗ 4 5|✗ 2.2 2.3 4 4.1 4.2|✗ 4 (iOS 3.2) 4 (iOS 4) 5 (iOS 4.3) 5.1 (iOS 5 5.1) 7 (iOS 7)|✗ 14 15|✓|✗ 14.12
+[topLeft](#topleft)||[15](https://github.com/browsejs/browse.js/issues/15) [2](https://github.com/browsejs/browse.js/issues/2) [4](https://github.com/browsejs/browse.js/issues/4) [5](https://github.com/browsejs/browse.js/issues/5) [6](https://github.com/browsejs/browse.js/issues/6)|✓|✓|✗ ^6 no-fixed|✓|✓|✓|✗ 4 (iOS 3)|✓|✓|✓
+[scrollY](#scrolly)|[11](https://github.com/browsejs/browse.js/issues/11) [10](https://github.com/browsejs/browse.js/issues/10)|[12](https://github.com/browsejs/browse.js/issues/12) [4](https://github.com/browsejs/browse.js/issues/4)|✗ 19-20 22 29-32 34-38 43-44 51-52 54-59|✗ 3.6 4 9-10 17-18 21-22 24-25 27 31 33-34 41 45-50 53|✗ 6 8 10 11|✗ 16-17 20-24 27-32 40 43-45|✗ 4 5|✗ 2.2 2.3 4 4.1 4.2|✗ 4 (iOS 3 3.2 4) 5 (iOS 4.3) 5.1 (iOS 5 5.1) 6 (iOS 6) 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[onclick](#onclick)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[onkeyup](#onkeyup)|[13](https://github.com/browsejs/browse.js/issues/13)||✗ 30-48|✓|✓|✗ 15-17 20-35|✗ 6.2 7.1|✓|✗ 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[onchange](#onchange)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[trigger](#trigger)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[ajax](#ajax)|[14](https://github.com/browsejs/browse.js/issues/14)||✓|✗ 3.6 4|✗ 8|✓|✓|✓|✓|✓|✗ 11.50|✓
+
 ## APIs
 ### $_
 ```javascript
@@ -380,17 +395,18 @@ contentType|Optional|-|Desired value for `Content-type` header. For `POST`, `PAT
 data|Optional|-|A `string` or `object` specifying the data to send with request (e.g. for POST call). Ignored for few methods viz. `GET`, `HEAD`, and `OPTIONS`.
 format|Optional|-|One of `json` and `xml`, if provided. The response body is parsed accordingly and processed data is passed to `success` callback.
 cache|Optional|true|Either `true` or `false`. If it is `true`, a nonce is added to the URL to avoid response caching in server.
+
 ## Browser Compatibility Testing
 ### Browsers Versions
 Browser|Type|Versions
 -|-|-
 ![Chrome](doc/img/browsers/chrome.png)|Browser|15.0-59.0
-![Firefox](doc/img/browsers/firefox.png)|Browser|3.6, 4.0-54.0
+![Firefox](doc/img/browsers/firefox.png)|Browser|3.6 4.0-54.0
 ![Internet Explorer](doc/img/browsers/internet-explorer.png)|Browser|6.0-11.0
-![Opera](doc/img/browsers/opera.png)|Browser|10.6, 11.1, 11.5-11.6, 12.0, 12.10, 12.12, 12.14-12.16, 15.0-45.0
-![Safari](doc/img/browsers/safari.png)|Browser|4.0, 5.0-5.1, 6.0, 6.2, 7.1
-![Android/Android Browser](doc/img/browsers/android-browser.png)|Emulator|1.5-1.6, 2.2-2.3, 4.0-4.2 (Android versions)
-![iOS/Mobile Safari](doc/img/browsers/mobile-safari.png)|Simulator|3.0, 3.2, 4.0, 4.3, 5.0-5.1, 6.0-7.0 (iOS versions)
+![Opera](doc/img/browsers/opera.png)|Browser|15.0-45.0
+![Safari](doc/img/browsers/safari.png)|Browser|4.0 5.0-5.1 6.0 6.2 7.1
+![Android/Android Browser](doc/img/browsers/android-browser.png)|Emulator|2.2-2.3 4.0-4.2 (Android versions)
+![iOS/Mobile Safari](doc/img/browsers/mobile-safari.png)|Simulator|3.0 3.2 4.0 4.3 5.0-5.1 6.0-7.0 (iOS versions)
 ![Edge](doc/img/browsers/edge.png)|Browser|14.0-15.0
 ![Opera Mobile Browser](doc/img/browsers/opera-browser.png)|Emulator|11.50 (Opera OS)
 ![Yandex](doc/img/browsers/yandex.png)|Browser|14.12
@@ -405,6 +421,16 @@ Browser|Type|Versions
 - [Istanbul](https://istanbul.js.org/)
 - [cross-browser-tests-runner](https://github.com/cross-browser-tests-runner/cross-browser-tests-runner)'s native runner collects client-side code coverage data after tests and stores locally
 - Code coverage uploaded to [codecov.io](https://codecov.io) and [coveralls](https://coveralls.io/)
+
+## Limitations
+### Browser Limitations
+- [Issue 1](https://github.com/browsejs/browse.js/issues/1): Creating elements with table-related tags
+- [Issue 2](https://github.com/browsejs/browse.js/issues/2): No support for `position: fixed`
+- [Issue 4](https://github.com/browsejs/browse.js/issues/4): `scrollTo` does not work as expected
+- [Issue 5](https://github.com/browsejs/browse.js/issues/5): No support for `getBoundingClientRect`
+- [Issue 6](https://github.com/browsejs/browse.js/issues/6): No support for `position: absolute`
+### Test Limitations
+- [Issue 4](https://github.com/browsejs/browse.js/issues/4): Some hacks for `scrollTo` do not work with Jasmine 1.3 asynchronous tests
 
 ## Acknowledgements
 [![BrowserStack](doc/img/ack/browserstack-logo.png)](https://www.browserstack.com)
