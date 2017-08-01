@@ -17,7 +17,7 @@ Lightweight library of abstractions for cross-browser compatibility
 ## Status
 > These are the [browsers versions](#browsers-versions) used for testing
 
-API|Issues|Browser Limitations|![Chrome](doc/img/browsers/chrome.png)|![Firefox](doc/img/browsers/firefox.png)|![Internet Explorer](doc/img/browsers/internet-explorer.png)|![Opera](doc/img/browsers/opera.png)|![Safari](doc/img/browsers/safari.png)|![Android/Android Browser](doc/img/browsers/android-browser.png)|![iOS/Mobile Safari](doc/img/browsers/mobile-safari.png)|![Edge](doc/img/browsers/edge.png)|![Opera Mobile Browser](doc/img/browsers/opera-browser.png)|![Yandex](doc/img/browsers/yandex.png)
+API|Issues|Browser Issues|![Chrome](doc/img/browsers/chrome.png)|![Firefox](doc/img/browsers/firefox.png)|![Internet Explorer](doc/img/browsers/internet-explorer.png)|![Opera](doc/img/browsers/opera.png)|![Safari](doc/img/browsers/safari.png)|![Android/Android Browser](doc/img/browsers/android-browser.png)|![iOS/Mobile Safari](doc/img/browsers/mobile-safari.png)|![Edge](doc/img/browsers/edge.png)|![Opera Mobile Browser](doc/img/browsers/opera-browser.png)|![Yandex](doc/img/browsers/yandex.png)
 -|-|-|-|-|-|-|-|-|-|-|-|-
 [ready](#ready)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [firstChild](#firstchild)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
@@ -36,15 +36,15 @@ API|Issues|Browser Limitations|![Chrome](doc/img/browsers/chrome.png)|![Firefox]
 [opacity](#opacity)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [hide](#hide)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [show](#show)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[fadeOut](#fadeout)|[11](https://github.com/browsejs/browse.js/issues/11)||✗ 19-20 22 29-32 34-38 43-44 51-52 54-59|✗ 3.6 4 9-10 17-18 21-22 24-25 27 31 33-34 41 45-50 53|✗ 6 8 10 11|✗ 16-17 20-24 27-32 40 43-45|✗ 4 5|✗ 2.2 2.3 4 4.1 4.2|✗ 4 (iOS 3.2) 4 (iOS 4) 5 (iOS 4.3) 5.1 (iOS 5 5.1) 7 (iOS 7)|✗ 14 15|✓|✗ 14.12
-[fadeIn](#fadein)|[11](https://github.com/browsejs/browse.js/issues/11) [3](https://github.com/browsejs/browse.js/issues/3)||✗ 19-20 22 29-32 34-38 43-44 51-52 54-59|✗ 3.6 4 9-10 17-18 21-22 24-25 27 31 33-34 41 45-50 53|✗ 6 8 10 11|✗ 16-17 20-24 27-32 40 43-45|✗ 4 5|✗ 2.2 2.3 4 4.1 4.2|✗ 4 (iOS 3.2) 4 (iOS 4) 5 (iOS 4.3) 5.1 (iOS 5 5.1) 7 (iOS 7)|✗ 14 15|✓|✗ 14.12
-[topLeft](#topleft)||[15](https://github.com/browsejs/browse.js/issues/15) [2](https://github.com/browsejs/browse.js/issues/2) [4](https://github.com/browsejs/browse.js/issues/4) [5](https://github.com/browsejs/browse.js/issues/5) [6](https://github.com/browsejs/browse.js/issues/6)|✓|✓|✗ ^6 no-fixed|✓|✓|✓|✗ 4 (iOS 3)|✓|✓|✓
-[scrollY](#scrolly)|[11](https://github.com/browsejs/browse.js/issues/11)|[12](https://github.com/browsejs/browse.js/issues/12) [4](https://github.com/browsejs/browse.js/issues/4)|✗ 19-20 22 29-32 34-38 43-44 51-52 54-59|✗ 3.6 4 9-10 17-18 21-22 24-25 27 31 33-34 41 45-50 53|✗ 6 8 10 11|✗ 16-17 20-24 27-32 40 43-45|✗ 4 5|✗ 2.2 2.3 4 4.1 4.2|✗ 4 (iOS 3 3.2 4) 5 (iOS 4.3) 5.1 (iOS 5 5.1) 6 (iOS 6) 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[fadeOut](#fadeout)|[16](https://github.com/browsejs/browse.js/issues/16) [17](https://github.com/browsejs/browse.js/issues/17)||✓|✗ 4 5|✓|✓|✗ 5|✓|✓|✓|✓|✓
+[fadeIn](#fadein)|[16](https://github.com/browsejs/browse.js/issues/16) [3](https://github.com/browsejs/browse.js/issues/3)||✓|✓|✗ 6|✓|✗ 5|✓|✓|✓|✓|✓
+[topLeft](#topleft)||[15](https://github.com/browsejs/browse.js/issues/15) [2](https://github.com/browsejs/browse.js/issues/2) [4](https://github.com/browsejs/browse.js/issues/4) [5](https://github.com/browsejs/browse.js/issues/5) [6](https://github.com/browsejs/browse.js/issues/6)|✓|✓|✓|✓|✓|✓|✗ 3|✓|✓|✓
+[scrollY](#scrolly)|[16](https://github.com/browsejs/browse.js/issues/16) [17](https://github.com/browsejs/browse.js/issues/17)|[12](https://github.com/browsejs/browse.js/issues/12) [4](https://github.com/browsejs/browse.js/issues/4)|✓|✗ 4|✓|✓|✗ 5|✗ 2.2 2.3 4 4.1 4.2|✗ 3 3.2 4 4.3 5 5.1 6 7|✓|✗ 11.50|✓
 [onclick](#onclick)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[onkeyup](#onkeyup)|[13](https://github.com/browsejs/browse.js/issues/13)||✗ 30-48|✓|✓|✗ 15-17 20-35|✗ 6.2 7.1|✓|✗ 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[onkeyup](#onkeyup)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [onchange](#onchange)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [trigger](#trigger)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[ajax](#ajax)|[14](https://github.com/browsejs/browse.js/issues/14)||✓|✗ 3.6 4|✗ 8|✓|✓|✓|✓|✓|✗ 11.50|✓
+[ajax](#ajax)|[14](https://github.com/browsejs/browse.js/issues/14)||✓|✗ 3.6 4|✓|✓|✓|✓|✓|✓|✗ 11.50|✓
 
 ## APIs
 ### $_
