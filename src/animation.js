@@ -52,7 +52,7 @@ browse.scrollY = function(toY, duration, callback) {
 
 function _queueAnimation(func, handle) {
   if(window.requestAnimationFrame) {
-    window.requestAnimationFrame(func)
+    handle = _adaptiveRequestFrame(func, handle)
   }
   else {
     handle = _adaptiveAnimate(func, handle)
@@ -60,14 +60,39 @@ function _queueAnimation(func, handle) {
   return handle
 }
 
-function _adaptiveAnimate(func, handle) {
-  handle = handle || { start: (new Date()).getTime(), times: 0 }
-  var interval = __frame_interval__ - ((new Date()).getTime() - handle.start - (handle.times * __frame_interval__))
-  interval = interval >= 0 ? interval : 0
-  setTimeout(function(){
-    func()
+function _adaptiveRequestFrame(func, handle) {
+  handle = handle || {start: (new Date()).getTime(), times: 0}
+  var delta = (new Date()).getTime() - (__frame_interval__ * handle.times) - handle.start
+  if (delta > 0 && delta > __frame_interval__) {
     ++handle.times
-  }, interval)
+    func()
+  }
+  else if (delta < (__frame_interval__ / 2) && delta) {
+    setTimeout(function(){
+      ++handle.times
+      window.requestAnimationFrame(func)
+    }, __frame_interval__)
+  }
+  else {
+    ++handle.times
+    window.requestAnimationFrame(func)
+  }
+  return handle
+}
+
+function _adaptiveAnimate(func, handle) {
+  handle = handle || {start: (new Date()).getTime(), times: 0}
+  var delta = (new Date()).getTime() - (__frame_interval__ * handle.times) - handle.start
+  if(delta >= __frame_interval__) {
+    ++handle.times
+    func()
+  }
+  else {
+    setTimeout(function(){
+      ++handle.times
+      func()
+    }, __frame_interval__ - delta)
+  }
   return handle
 }
 
@@ -75,7 +100,6 @@ function _fadeInTick(obj, step, callback, queueFn) {
   var opacity = obj.opacity()
   var tick = function() {
     opacity = opacity + step > 1 ? 1 : opacity + step
-    //console.log('fadeIn step', obj.opacity(), ' -> ', opacity)
     obj.opacity(opacity)
     if(opacity < 1) {
       queueFn()
@@ -90,7 +114,6 @@ function _fadeOutTick(obj, step, callback, queueFn) {
   var opacity = obj.opacity()
   var tick = function() {
     opacity = opacity - step < 0 ? 0 : opacity - step
-    //console.log('fadeOut step', obj.opacity(), ' -> ', opacity)
     obj.opacity(opacity)
     if(opacity > 0) {
       queueFn()
@@ -106,7 +129,6 @@ function _scrollYTick(obj, currX, currY, toY, step, direction, callback, queueFn
   var tick = function() {
     currY = currY + step
     currY = _isPastTargetY(direction, currY, toY) ? toY : currY
-    //console.log('scrollY step', currY, toY)
     window.scrollTo(currX, Math.ceil(currY))
     if(currY !== toY) {
       queueFn()

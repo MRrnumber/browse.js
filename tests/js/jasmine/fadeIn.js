@@ -73,7 +73,7 @@ describe('fadeIn', function() {
         expect(obj.element.offsetHeight).toEqual(10)
         expect(obj.opacity()).toEqual(1.0)
         if(window.requestAnimationFrame) {
-          expect(time).toBeGreaterThan(interval)
+          expect(time).toBeGreaterThan(interval-1)
           expect(time-interval).toBeLessThan(200)
         }
         else {
@@ -109,7 +109,7 @@ describe('fadeIn', function() {
         expect(obj.element.offsetHeight).toEqual(10)
         expect(obj.opacity()).toEqual(1.0)
         if(window.requestAnimationFrame) {
-          expect(time).toBeGreaterThan(interval)
+          expect(time).toBeGreaterThan(interval-1)
           expect(time-interval).toBeLessThan(200)
         }
         else {

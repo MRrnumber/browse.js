@@ -70,7 +70,7 @@ describe('fadeOut', function() {
         expect(obj.element.offsetHeight).toEqual(0)
         expect(obj.opacity()).toEqual(0)
         if(window.requestAnimationFrame) {
-          expect(time).toBeGreaterThan(interval)
+          expect(time).toBeGreaterThan(interval-1)
           expect(time-interval).toBeLessThan(200)
         }
         else {
@@ -106,7 +106,7 @@ describe('fadeOut', function() {
         expect(obj.element.offsetHeight).toEqual(0)
         expect(obj.opacity()).toEqual(0)
         if(window.requestAnimationFrame) {
-          expect(time).toBeGreaterThan(interval)
+          expect(time).toBeGreaterThan(interval-1)
           expect(time-interval).toBeLessThan(200)
         }
         else {

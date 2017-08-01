@@ -67,7 +67,7 @@ describe('scrollY', function() {
         log('time taken (ms)', time)
         expect($_.getCurrY()).toEqual(100)
         if(window.requestAnimationFrame) {
-          expect(time).toBeGreaterThan(interval)
+          expect(time).toBeGreaterThan(interval-1)
           expect(time-interval).toBeLessThan(200)
         }
         else {
@@ -102,7 +102,7 @@ describe('scrollY', function() {
         log('time taken (ms)', time)
         expect($_.getCurrY()).toEqual(100)
         if(window.requestAnimationFrame) {
-          expect(time).toBeGreaterThan(interval)
+          expect(time).toBeGreaterThan(interval-1)
           expect(time-interval).toBeLessThan(200)
         }
         else {

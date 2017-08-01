@@ -28,10 +28,10 @@ API|Issues|Browser Limitations|![Chrome](doc/img/browsers/chrome.png)|![Firefox]
 [prepend](#prepend)||[1](https://github.com/browsejs/browse.js/issues/1)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [after](#after)||[1](https://github.com/browsejs/browse.js/issues/1)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [before](#before)||[1](https://github.com/browsejs/browse.js/issues/1)|✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[getClass](#getclass)|[7](https://github.com/browsejs/browse.js/issues/7)||✗ 15-49|✗ 3.6 4-46|✗ 10 11|✗ 15-17 20-36| 5.1 6.0 6.2 7.1|✗ 4 4.1 4.2|✗ 5.1 (iOS 5 5.1) 6 (iOS 6) 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[getClass](#getclass)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [hasClass](#hasclass)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
-[addClass](#addclass)|[8](https://github.com/browsejs/browse.js/issues/8)||✗ 15-49|✗ 3.6 4-46|✗ 10 11|✗ 15-17 20-36| 5.1 6.0 6.2 7.1|✗ 4 4.1 4.2|✗ 5.1 (iOS 5 5.1) 6 (iOS 6) 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
-[removeClass](#removeclass)|[9](https://github.com/browsejs/browse.js/issues/9)||✗ 15-49|✗ 3.6 4-46|✗ 10 11|✗ 15-17 20-36| 5.1 6.0 6.2 7.1|✗ 4 4.1 4.2|✗ 5.1 (iOS 5 5.1) 6 (iOS 6) 7 (iOS 7)|✗ 14 15|✗ 11.50|✗ 14.12
+[addClass](#addclass)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
+[removeClass](#removeclass)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [style](#style)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [opacity](#opacity)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [hide](#hide)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
