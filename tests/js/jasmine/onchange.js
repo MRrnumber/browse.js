@@ -4,7 +4,6 @@ describe('onchange', function() {
     var text = $_(document.body).append('<input type=text>').lastChild()
     var spy = {
       callback: function(e) {
-        log('got called')
       }
     }
     spyOn(spy, 'callback').andCallThrough()

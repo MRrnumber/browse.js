@@ -60,22 +60,29 @@ function _queueAnimation(func, handle) {
   return handle
 }
 
+function _callFunc(func, handle) {
+  ++handle.times
+  func()
+}
+
+function _requestFunc(func, handle) {
+  ++handle.times
+  window.requestAnimationFrame(func)
+}
+
 function _adaptiveRequestFrame(func, handle) {
   handle = handle || {start: (new Date()).getTime(), times: 0}
   var delta = (new Date()).getTime() - (__frame_interval__ * handle.times) - handle.start
-  if (delta > 0 && delta > __frame_interval__) {
-    ++handle.times
-    func()
+  if (delta > __frame_interval__) {
+    _callFunc(func, handle)
   }
-  else if (delta < (__frame_interval__ / 2) && delta) {
-    setTimeout(function(){
-      ++handle.times
-      window.requestAnimationFrame(func)
-    }, __frame_interval__)
+  else if (delta >= (__frame_interval__ / 2)) {
+    _requestFunc(func, handle)
   }
   else {
-    ++handle.times
-    window.requestAnimationFrame(func)
+    setTimeout(function(){
+      _requestFunc(func, handle)
+    }, __frame_interval__)
   }
   return handle
 }
@@ -84,13 +91,11 @@ function _adaptiveAnimate(func, handle) {
   handle = handle || {start: (new Date()).getTime(), times: 0}
   var delta = (new Date()).getTime() - (__frame_interval__ * handle.times) - handle.start
   if(delta >= __frame_interval__) {
-    ++handle.times
-    func()
+    _callFunc(func, handle)
   }
   else {
     setTimeout(function(){
-      ++handle.times
-      func()
+      _callFunc(func, handle)
     }, __frame_interval__ - delta)
   }
   return handle

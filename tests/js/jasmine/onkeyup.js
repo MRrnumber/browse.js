@@ -4,7 +4,6 @@ describe('onkeyup', function() {
     var text = $_(document.body).append('<input type=text>').lastChild()
     var spy = {
       callback: function(e) {
-        log('got called')
       }
     }
     spyOn(spy, 'callback').andCallThrough()
@@ -18,16 +17,23 @@ describe('onkeyup', function() {
     var text = $_(document.body).append('<input type=text>').lastChild()
     var spy = {
       callback: function(e) {
-        log('got called')
-        expect(parseInt(e.keyCode||e.charCode||e.code)).toEqual(2)
+        /*var keys = [ ]
+        for (var key in e) {
+          keys.push(key)
+          if('object' !== typeof(e[key]) && 'function' !== typeof(e[key])) {
+            keys.push('=' + e[key])
+          }
+        }
+        expect('keyup ' + keys.join(',')).toEqual('')*/
+        expect(parseInt(e.keyCode||e.charCode||e.code||e.key||e.keyIdentifier)).toEqual(2)
         expect(e.shiftKey).toEqual(true)
-        expect(e.location).toEqual(1)
+        expect(e.location||e.keyLocation).toEqual(1)
         expect(e.view).toNotEqual('xyz')
       }
     }
     spyOn(spy, 'callback').andCallThrough()
     text.onkeyup(spy.callback)
-    text.trigger('keyup', { code: 2, keyCode: 2, charCode: 2, shiftKey: true, location: 1, view: 'xyz' })
+    text.trigger('keyup', { key: 2, keyIdentifier: 2, code: 2, keyCode: 2, charCode: 2, shiftKey: true, location: 1, keyLocation: 1, view: 'xyz' })
     expect(spy.callback).toHaveBeenCalled()
     text.element.parentNode.removeChild(text.element)
   })

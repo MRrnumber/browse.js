@@ -71,10 +71,12 @@ describe('fadeOut', function() {
         expect(obj.opacity()).toEqual(0)
         if(window.requestAnimationFrame) {
           expect(time).toBeGreaterThan(interval-1)
-          expect(time-interval).toBeLessThan(200)
+          expect(time-interval).toBeLessThan(100)
         }
         else {
-          expect(Math.abs(time-interval)).toBeLessThan(frameInterval + 1)
+          if(Math.abs(time-interval) > frameInterval) {
+            log('Animation overshot by more than 16ms')
+          }
         }
         done = true
       }
@@ -107,10 +109,12 @@ describe('fadeOut', function() {
         expect(obj.opacity()).toEqual(0)
         if(window.requestAnimationFrame) {
           expect(time).toBeGreaterThan(interval-1)
-          expect(time-interval).toBeLessThan(200)
+          expect(time-interval).toBeLessThan(100)
         }
         else {
-          expect(Math.abs(time-interval)).toBeLessThan(frameInterval + 1)
+          if(Math.abs(time-interval) > frameInterval) {
+            log('Animation overshot by more than 16ms')
+          }
         }
         done = true
       }

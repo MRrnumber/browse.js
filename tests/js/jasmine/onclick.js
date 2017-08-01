@@ -4,7 +4,6 @@ describe('onclick', function() {
     var button = $_(document.body).append('<input type=submit value=abc>').lastChild()
     var spy = {
       callback: function(e) {
-        log('got called')
       }
     }
     spyOn(spy, 'callback').andCallThrough()
@@ -18,7 +17,6 @@ describe('onclick', function() {
     var button = $_(document.body).append('<input type=submit value=abc>').lastChild()
     var spy = {
       callback: function(e) {
-        log('got called')
         expect(e.button).toEqual(1)
         expect(e.ctrlKey).toEqual(true)
         expect(e.metaKey).toEqual(true)

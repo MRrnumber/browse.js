@@ -28,12 +28,38 @@ _allowedKeyboardEventParams = [
   'charCode',
   'keyCode',
   'which'
+],
+_notAllowedKeyboardEventParams = [
+  'bubbles',
+  'cancelable',
+  'view'
 ]
+
+if('KeyboardEvent' in window) {
+  var temp
+  try {
+    temp = new window.KeyboardEvent('keyup', { })
+    /* eslint-disable guard-for-in */
+    for(var key in temp) {
+      var type = typeof(temp[key])
+      if('function' !== type && 'object' !== type && key.match(/[a-z]/)
+        && -1 === _allowedKeyboardEventParams.indexOf(key)
+        && -1 === _notAllowedKeyboardEventParams.indexOf(key))
+      {
+        _allowedKeyboardEventParams.push(key)
+      }
+    }
+    /* eslint-enable guard-for-in */
+  }
+  catch(e) {
+    // ignore
+  }
+}
 
 function _createKeyboardEvent(type, params) {
   var e,
   input = _eventDataFromDefsAndParams(_keyboardEventDefs, _allowedKeyboardEventParams, params)
-  if('KeyboardEvent' in window) {
+  if('KeyboardEvent' in window || 'createEvent' in document) {
     e = _nonIeKbEvent(type, input)
   }
   else /*if('createEventObject' in document)*/ {
