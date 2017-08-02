@@ -57,6 +57,11 @@ app.use('/500', function(req, res) {
   throw new Error('simulating 500')
 })
 
+app.post('/scrollY', function(req, res) {
+  console.log('expected position %s, measured position %s', req.body.expected, req.body.measured)
+  res.sendStatus(201)
+})
+
 app.use('/', express.static(__dirname + '/public'))
 
 app.use(function(req, res) {

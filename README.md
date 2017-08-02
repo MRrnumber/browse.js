@@ -37,9 +37,9 @@ API|Issues|Browser Issues|![Chrome](doc/img/browsers/chrome.png)|![Firefox](doc/
 [hide](#hide)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [show](#show)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [fadeOut](#fadeout)|[16](https://github.com/browsejs/browse.js/issues/16) [17](https://github.com/browsejs/browse.js/issues/17)||✓|✗ 4 5|✓|✓|✗ 5|✓|✓|✓|✓|✓
-[fadeIn](#fadein)|[16](https://github.com/browsejs/browse.js/issues/16) [3](https://github.com/browsejs/browse.js/issues/3)||✓|✓|✗ 6|✓|✗ 5|✓|✓|✓|✓|✓
+[fadeIn](#fadein)|[16](https://github.com/browsejs/browse.js/issues/16)||✓|✓|✓|✓|✗ 5|✓|✓|✓|✓|✓
 [topLeft](#topleft)||[15](https://github.com/browsejs/browse.js/issues/15) [2](https://github.com/browsejs/browse.js/issues/2) [4](https://github.com/browsejs/browse.js/issues/4) [5](https://github.com/browsejs/browse.js/issues/5) [6](https://github.com/browsejs/browse.js/issues/6)|✓|✓|✓|✓|✓|✓|✗ 3|✓|✓|✓
-[scrollY](#scrolly)|[16](https://github.com/browsejs/browse.js/issues/16) [17](https://github.com/browsejs/browse.js/issues/17)|[12](https://github.com/browsejs/browse.js/issues/12) [4](https://github.com/browsejs/browse.js/issues/4)|✓|✗ 4|✓|✓|✗ 5|✗ 2.2 2.3 4 4.1 4.2|✗ 3 3.2 4 4.3 5 5.1 6 7|✓|✗ 11.50|✓
+[scrollY](#scrolly)|[16](https://github.com/browsejs/browse.js/issues/16) [17](https://github.com/browsejs/browse.js/issues/17)|[4](https://github.com/browsejs/browse.js/issues/4)|✓|✗ 4|✓|✓|✗ 5|✓|✓|✓|✗ 11.50|✓
 [onclick](#onclick)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [onkeyup](#onkeyup)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓
 [onchange](#onchange)|||✓|✓|✓|✓|✓|✓|✓|✓|✓|✓

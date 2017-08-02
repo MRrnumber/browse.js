@@ -3,7 +3,7 @@ describe('fadeIn', function() {
   var frameInterval = 16
 
   it('should complete to get a 100% opacity visible element', function() {
-    var elem = $_(document.body).append('<div style=display:none;background-color:black;height:10px>').lastChild()
+    var elem = $_(document.body).append('<div style=display:none;background-color:black;height:20px>').lastChild()
     var interval = 1000, done = false
     elem.opacity(0)
     var spy = {
@@ -12,7 +12,7 @@ describe('fadeIn', function() {
           time = after.getTime() - before.getTime()
         log('time taken (ms)', time)
         expect(obj).toEqual(elem)
-        expect(obj.element.offsetHeight).toEqual(10)
+        expect(obj.element.offsetHeight).toEqual(20)
         expect(obj.opacity()).toEqual(1.0)
         done = true
       }
@@ -32,7 +32,7 @@ describe('fadeIn', function() {
   })
 
   it('should run for a duration less than javascript frame interval', function() {
-    var elem = $_(document.body).append('<div style=display:none;background-color:black;height:10px>').lastChild()
+    var elem = $_(document.body).append('<div style=display:none;background-color:black;height:20px>').lastChild()
     var interval = 5, done = false
     elem.opacity(0)
     var spy = {
@@ -41,7 +41,7 @@ describe('fadeIn', function() {
           time = after.getTime() - before.getTime()
         log('time taken (ms)', time)
         expect(obj).toEqual(elem)
-        expect(obj.element.offsetHeight).toEqual(10)
+        expect(obj.element.offsetHeight).toEqual(20)
         expect(obj.opacity()).toEqual(1.0)
         done = true
       }
@@ -61,7 +61,7 @@ describe('fadeIn', function() {
   })
 
   it('should complete in a time close to given duration', function() {
-    var elem = $_(document.body).append('<div style=display:none;background-color:black;height:10px>').lastChild()
+    var elem = $_(document.body).append('<div style=display:none;background-color:black;height:20px>').lastChild()
     var interval = 1000, done = false
     elem.opacity(0)
     var spy = {
@@ -70,7 +70,7 @@ describe('fadeIn', function() {
           time = after.getTime() - before.getTime()
         log('time taken (ms)', time)
         expect(obj).toEqual(elem)
-        expect(obj.element.offsetHeight).toEqual(10)
+        expect(obj.element.offsetHeight).toEqual(20)
         expect(obj.opacity()).toEqual(1.0)
         if(window.requestAnimationFrame) {
           expect(time).toBeGreaterThan(interval-1)
@@ -99,7 +99,7 @@ describe('fadeIn', function() {
   })
 
   it('should work starting with any opacity level', function() {
-    var elem = $_(document.body).append('<div style=display:none;background-color:black;height:10px>').lastChild()
+    var elem = $_(document.body).append('<div style=display:none;background-color:black;height:20px>').lastChild()
     var interval = 1000, done = false
     elem.opacity(0.3)
     var spy = {
@@ -108,7 +108,7 @@ describe('fadeIn', function() {
           time = after.getTime() - before.getTime()
         log('time taken (ms)', time)
         expect(obj).toEqual(elem)
-        expect(obj.element.offsetHeight).toEqual(10)
+        expect(obj.element.offsetHeight).toEqual(20)
         expect(obj.opacity()).toEqual(1.0)
         if(window.requestAnimationFrame) {
           expect(time).toBeGreaterThan(interval-1)
