@@ -5,11 +5,16 @@ browse.ajax = function(url, options) {
   url = _nonce(url, options)
   _onload(xhr, url, options)
   _timeout(xhr, url, options)
-  _data(options)
-  xhr.open(options.method, url, true)
-  _headers(xhr, options.headers)
-  _contentType(xhr, options)
-  xhr.send(options.method.match(__methods_with_data__) && options.data || null)
+  try {
+    _data(options)
+    xhr.open(options.method, url, true)
+    _headers(xhr, options.headers)
+    _contentType(xhr, options)
+    xhr.send(options.method.match(__methods_with_data__) && options.data || null)
+  }
+  catch(e) {
+    _ajaxError(e, xhr, url, options)
+  }
 }
 
 function _xhr() {
@@ -17,6 +22,17 @@ function _xhr() {
     return new window.ActiveXObject('Microsoft.XmlHttp')
   }
   return new window.XMLHttpRequest()
+}
+
+function _ajaxError(err, xhr, url, options) {
+  var status
+  try {
+    status = xhr.status
+  }
+  catch(e) {
+    status = 0
+  }
+  options.error(err.message, status, url, xhr)
 }
 
 var

@@ -5,6 +5,9 @@ function _onload(xhr, url, options) {
     xhr.onload = function() {
       _ajaxResponse(xhr, url, options)
     }
+    xhr.onerror = function() {
+      _ajaxResponse(xhr, url, options)
+    }
   }
   else {
     xhr.onreadystatechange = function() {
@@ -17,7 +20,7 @@ function _onload(xhr, url, options) {
 
 function _ajaxResponse(xhr, url, options) {
   if(0 === xhr.status) {
-    options.error('incomplete request', xhr.status, url, xhr)
+    options.error(xhr.responseText || 'incomplete request', xhr.status, url, xhr)
   }
   else if(200 <= xhr.status && 299 >= xhr.status) {
     options.success(_parsed(xhr, options), xhr.status, url, xhr)
