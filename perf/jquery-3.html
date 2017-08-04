@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <title>jquery performance</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <script>
+    var counter = 0
+    function test() {
+      var idx,
+        time = 0,
+        body = $("body"),
+        result = $('#result'),
+        before
+      for(idx = 0; idx < 100000; ++idx) {
+        before = (new Date()).getTime()
+        body.append('<div id=test-div>Here is some content</div>')
+        time += ((new Date()).getTime() - before)
+        body.children().last().remove()
+      }
+      var avg = (((parseFloat(result.html()) || 0) * counter) + time) / (++counter)
+      result.html(avg.toFixed(3) + 'ms')
+    }
+  </script>
+  <h3>jQuery 3.2</h3>
+  <button type=button onclick="test();">run</button>
+  <span id=result></span>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title>mootools.js performance comparisons</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.5.2/mootools-core.min.js"></script>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <script>
+    var counter = 0
+    function test(e) {
+      var idx,
+        time = 0,
+        body = $$('body')[0],
+        result = $('result'),
+        before
+      for(idx = 0; idx < 100000; ++idx) {
+        before = (new Date()).getTime()
+        var el = new Element('div', { id: "test-div", html: 'Here is some content'})
+        el.inject(body)
+        time += ((new Date()).getTime() - before)
+        $('test-div').dispose()
+      }
+      var avg = (((parseFloat(result.get('html')) || 0) * counter) + time) / (++counter)
+      result.set('html', avg.toFixed(3) + 'ms')
+    }
+  </script>
+  <h3>mootools 1.5</h3>
+  <button type=button onclick="test(event);">run</button>
+  <span id=result></span>
+</body>
+</html>

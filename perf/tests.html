@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+  <title>performance comparison</title>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body class=pages>
+  <div class=container>
+    <a href=../index.html>Home</a>
+    <h1>Performance Comparison</h1>
+    <h2>About the Tests</h2>
+    <p>Each of the tests below creates 100000 elements by appending (using equivalent APIs in each library e.g. <code>append</code> in browse.js, jquery; <code>inject</code> in mootools; and <code>insert</code> in prototype) an element to <code>body</code>.</p>
+    <p>Since creating and keeping all the elements makes the browser hang typically, the mechanism used is to create and element, measure and remember the time taken, and then delete the newly created element before adding another.</p>
+    <h2>How to run</h2>
+    <p>Press the 'run' button and <strong>wait for time taken to be output</strong> on its right. Click a test multiple times to see the average time taken, which gives a better and fair idea.</p>
+    <p>&nbsp;</p>
+    <div class="column first"><iframe src="./browsejs.html"/></iframe></div>
+    <div class=column><iframe src="./mootools.html"/></iframe></div>
+    <div class=column><iframe src="./prototype.html"/></iframe></div>
+    <!--div class=column><iframe src="./jquery-1.html"/></iframe></div>
+    <div class=column><iframe src="./jquery-2.html"/></iframe></div-->
+    <div class=column><iframe src="./jquery-3.html"/></iframe></div>
+    <!--div class=column><iframe src="./jquery-slim-1.html"/></iframe></div>
+    <div class=column><iframe src="./jquery-slim-2.html"/></iframe></div-->
+    <div class=column><iframe src="./jquery-slim-3.html"/></iframe></div>
+  </div>
+</body>
+</html>

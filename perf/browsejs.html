@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <title>browsejs performance</title>
+  <script src="../lib/browse.min.js"></script>
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <script>
+    var counter = 0
+    function test(e) {
+      var idx,
+        time = 0,
+        body = $_(document.body),
+        result = document.getElementById('result'),
+        before
+      for(idx = 0; idx < 100000; ++idx) {
+        before = (new Date()).getTime()
+        body.append('<div id=test-div>Here is some content</div>')
+        time += ((new Date()).getTime() - before)
+        var el = body.lastChild().element
+        el.parentNode.removeChild(el)
+      }
+      var avg = (((parseFloat(result.innerHTML) || 0) * counter) + time) / (++counter)
+      result.innerHTML = avg.toFixed(3) + 'ms'
+    }
+  </script>
+  <h3>browse.js</h3>
+  <button type=button onclick="test(event);">run</button>
+  <span id=result></span>
+</body>
+</html>
