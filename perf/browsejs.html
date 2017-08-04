@@ -10,6 +10,7 @@
   <script>
     var counter = 0
     function test(e) {
+      document.getElementById('button').disabled = true
       var idx,
         time = 0,
         body = $_(document.body),
@@ -24,10 +25,11 @@
       }
       var avg = (((parseFloat(result.innerHTML) || 0) * counter) + time) / (++counter)
       result.innerHTML = avg.toFixed(3) + 'ms'
+      document.getElementById('button').disabled = false
     }
   </script>
-  <h3>browse.js</h3>
-  <button type=button onclick="test(event);">run</button>
+  <h2>browse.js</h2>
+  <button id=button type=button onclick="test(event);">run</button>
   <span id=result></span>
 </body>
 </html>
