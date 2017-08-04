@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/browsejs/browse.js.svg?branch=master)](https://travis-ci.org/browsejs/browse.js) [![codecov](https://codecov.io/gh/browsejs/browse.js/branch/master/graph/badge.svg)](https://codecov.io/gh/browsejs/browse.js) [![Coverage Status](https://coveralls.io/repos/github/browsejs/browse.js/badge.svg?branch=master)](https://coveralls.io/github/browsejs/browse.js?branch=master) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/browsejs/browse.js/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/browsejs/browse.js/?branch=master) [![Code Climate](https://codeclimate.com/github/browsejs/browse.js.svg)](https://codeclimate.com/github/browsejs/browse.js)
 # browse.js
-Lightweight library of abstractions for cross-browser compatibility
+Lightweight library of abstractions for cross-browser compatibility. Current version outperforms jquery and prototype by 4x.
 
 - [Status](#status)
 - [APIs](#apis)
@@ -9,13 +9,13 @@ Lightweight library of abstractions for cross-browser compatibility
     - [Tools](#tools)
 - [Testing](#testing)
     - [Code Coverage](#code-coverage)
+    - [Performance](#performance)
 - [Limitations](#limitations)
     - [Browser Limitations](#browser-limitations)
-    - [Test Limitations](#test-limitations)
 - [Acknowledgements](#acknowledgements)
 
 ## Status
-> These are the [browsers versions](#browsers-versions) used for testing
+> These are the [browsers versions](#browsers-versions) used for testing.
 
 API|Open Issues|Browser Issues|![Chrome](doc/img/browsers/chrome.png)|![Firefox](doc/img/browsers/firefox.png)|![Internet Explorer](doc/img/browsers/internet-explorer.png)|![Opera](doc/img/browsers/opera.png)|![Safari](doc/img/browsers/safari.png)|![Android/Android Browser](doc/img/browsers/android-browser.png)|![iOS/Mobile Safari](doc/img/browsers/mobile-safari.png)|![Edge](doc/img/browsers/edge.png)|![Opera Mobile Browser](doc/img/browsers/opera-browser.png)|![Yandex](doc/img/browsers/yandex.png)
 -|-|-|-|-|-|-|-|-|-|-|-|-
@@ -421,6 +421,8 @@ Browser|Type|Versions
 - [Istanbul](https://istanbul.js.org/)
 - [cross-browser-tests-runner](https://github.com/cross-browser-tests-runner/cross-browser-tests-runner)'s native runner collects client-side code coverage data after tests and stores locally
 - Code coverage uploaded to [codecov.io](https://codecov.io) and [coveralls](https://coveralls.io/)
+### Performance
+Please check the [performance test and comparison](https://browsejs.github.io/browse.js/perf/tests.html) with jquery, prototype and mootools.
 
 ## Limitations
 ### Browser Limitations
@@ -429,8 +431,6 @@ Browser|Type|Versions
 - [Issue 4](https://github.com/browsejs/browse.js/issues/4): `scrollTo` does not work as expected
 - [Issue 5](https://github.com/browsejs/browse.js/issues/5): No support for `getBoundingClientRect`
 - [Issue 6](https://github.com/browsejs/browse.js/issues/6): No support for `position: absolute`
-### Test Limitations
-- [Issue 4](https://github.com/browsejs/browse.js/issues/4): Some hacks for `scrollTo` do not work with Jasmine 1.3 asynchronous tests
 
 ## Acknowledgements
 [![BrowserStack](doc/img/ack/browserstack-logo.png)](https://www.browserstack.com)
