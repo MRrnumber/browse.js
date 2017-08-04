@@ -32,9 +32,6 @@ span {
   margin-left: 10px;
   display: inline-block;
 }
-h1, h2, h3, h4 {
-  font-weight: normal;
-}
 .column {
   width: 220px;
   padding: 10px;
@@ -47,11 +44,12 @@ h1, h2, h3, h4 {
 .column.first {
   border-left: solid 1px #ddd;
 }
-/*.column:nth-child(2n+1) {
-  background-color: whitesmoke;
-}*/
 iframe {
   border: none;
   width: 200px;
   height: 120px;
+}
+h1, h2, h3, h4 {
+  font-weight: bold;
+  font-weight: 500;
 }
